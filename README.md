@@ -179,7 +179,7 @@ The Hive MCP is available as a managed service - no installation required. Simpl
 - [Twitter/X Updates](https://twitter.com/hiveintel)
 
 ### Support
-- Email: support@hiveintelligence.xyz
+- Email: team@hiveintelligence.xyz, Escalate: utsav@hiveintelligence.xyz
 - Documentation: https://hiveintelligence.xyz/docs
 - GitHub Issues: [Report Issues](https://github.com/Hiveintelligencexyz/hive-mcp/issues)
 
@@ -219,4 +219,4 @@ This project showcases the capabilities of the Hive MCP Server. The actual servi
 
 ---
 
-© 2024 Hive Intelligence - Building the Future of Crypto AI Integration
+© 2025 Hive Intelligence - Building the Future of Crypto AI Integration
