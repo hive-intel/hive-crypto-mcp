@@ -62,14 +62,6 @@ The Hive MCP is available as a managed service - no installation required. Simpl
 - Top holders and trader analytics
 - Token lifecycle event tracking
 
-## 🔍 SEO Keywords for Discovery
-
-**Primary Keywords**: Crypto MCP, Cryptocurrency MCP, Blockchain MCP, Web3 MCP, DeFi MCP, NFT MCP, Model Context Protocol Crypto, MCP Server Cryptocurrency, AI Crypto Integration, Claude Crypto Tools
-
-**Technical Keywords**: MCP Protocol, Model Context Protocol Server, AI Blockchain Integration, Crypto API MCP, DeFi Analytics MCP, On-chain Data MCP, DEX Analytics MCP, Wallet Tracking MCP
-
-**Use Case Keywords**: Crypto Trading AI, DeFi Yield Farming AI, NFT Investment AI, Blockchain Analytics AI, Crypto Portfolio AI, Token Security AI, Smart Contract AI, Web3 AI Assistant
-
 ## 🎯 Perfect Use Cases
 
 ### For Traders & Investors
