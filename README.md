@@ -1,3 +1,5 @@
+[![MSeeP.ai Security Assessment Badge](https://mseep.net/pr/hive-intel-hive-crypto-mcp-badge.png)](https://mseep.ai/app/hive-intel-hive-crypto-mcp)
+
 # Hive MCP - Crypto MCP Server for AI-Powered Blockchain Intelligence
 
 ## The Ultimate Cryptocurrency MCP (Model Context Protocol) for AI Assistants
