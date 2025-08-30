@@ -1,6 +1,6 @@
 {
-  "name": "hive-mcp",
-  "version": "0.1.2",
+  "name": "mcp-hive",
+  "version": "0.1.0",
   "description": "MCP server for Hive Intelligence crypto and Web3 search",
   "type": "module",
   "scripts": {
@@ -30,7 +30,7 @@
     "winston": "^3.11.0"
   },
   "bin": {
-    "hive-mcp": "./build/index.js"
+    "hive-mcp": "./build/server.js"
   },
   "files": [
     "build/**/*",

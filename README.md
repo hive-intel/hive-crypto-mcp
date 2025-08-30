@@ -42,7 +42,7 @@ Add to your MCP client configuration:
   "mcpServers": {
     "hive": {
       "command": "npx",
-      "args": ["-y", "hive-mcp"]
+      "args": ["-y", "mcp-hive"]
     }
   }
 }
@@ -62,7 +62,7 @@ Add to your Claude Desktop configuration file:
   "mcpServers": {
     "hive-mcp": {
       "command": "npx",
-      "args": ["hive-mcp"]
+      "args": ["-y", "mcp-hive"]
     }
   }
 }
@@ -70,16 +70,6 @@ Add to your Claude Desktop configuration file:
 
 ## Development
 
-### Project Structure
-
-```
-src/
-├── server.ts           # Main MCP server implementation
-├── toolRegistry.ts     # Tool categorization and routing
-├── dynamic-tools.ts    # Dynamic tool loading
-└── mcp/
-    └── allToolList.ts  # Complete tool definitions
-```
 
 ### Building
 
