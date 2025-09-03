@@ -1,6 +1,11 @@
 {
   "$schema": "https://glama.ai/mcp/schemas/server.json",
   "maintainers": [
+    "utsav@hiveintelligence.xyz"
+  ]
+}{
+  "$schema": "https://glama.ai/mcp/schemas/server.json",
+  "maintainers": [
     "hive-intel"
   ]
 }
