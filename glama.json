@@ -3,9 +3,4 @@
   "maintainers": [
     "utsav-hive"
   ]
-}{
-  "$schema": "https://glama.ai/mcp/schemas/server.json",
-  "maintainers": [
-    "hive-intel"
-  ]
 }
