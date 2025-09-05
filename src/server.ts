@@ -16,7 +16,7 @@ import {getToolByCategory} from './toolRegistry'
 import { CategoryEndpoints } from './toolRegistry';
 dotenv.config();
 
-const API_EXECUTE_ENDPOINT = process.env.API_EXECUTE_ENDPOINT || 'http://localhost:3000/api/execute';
+const API_EXECUTE_ENDPOINT = process.env.API_EXECUTE_ENDPOINT || 'https://hive-proxy-api-84541061662.asia-south1.run.app/api/execute'//'https://dev.hiveintelligence.xyz/api/execute';
 
 function getDynamicTools(){
   const allToolEndpoints = supportedTools
