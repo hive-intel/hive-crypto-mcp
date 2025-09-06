@@ -88,3 +88,7 @@ npm run prepare
 npm run inspector
 ```
 ---
+
+## remote mcp server
+checkout the guide to use the hive's remote mcp server
+https://hiveintelligence.xyz/crypto-mcp
