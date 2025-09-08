@@ -1,10 +1,10 @@
-# Hive MCP Server
+# Hive Intelligence MCP Server
 
 A Model Context Protocol (MCP) server providing comprehensive cryptocurrency and Web3 analytics through intelligent tool orchestration.
 
 ## Overview
 
-Hive MCP Server enables AI assistants to access a wide range of cryptocurrency, DeFi, and Web3 analytics through a unified MCP interface. The server provides both dynamic and category-specific access to over 200+ specialized tools covering market data, on-chain analytics, portfolio tracking, security analysis, and more.
+Hive Intelligence MCP Server enables AI assistants to access a wide range of cryptocurrency, DeFi, and Web3 analytics through a unified MCP interface. The server provides both dynamic and category-specific access to over 200+ specialized tools covering market data, on-chain analytics, portfolio tracking, security analysis, and more.
 
 
 ### 📊 **Analytics Categories**
