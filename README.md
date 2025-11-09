@@ -2,6 +2,10 @@
 
 A Model Context Protocol (MCP) server providing comprehensive cryptocurrency and Web3 analytics through intelligent tool orchestration.
 
+<a href="https://glama.ai/mcp/servers/@hive-intel/hive-crypto-mcp">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/@hive-intel/hive-crypto-mcp/badge" alt="Hive Intelligence MCP server" />
+</a>
+
 ## Overview
 
 Hive Intelligence MCP Server enables AI assistants to access a wide range of cryptocurrency, DeFi, and Web3 analytics through a unified MCP interface. The server provides both dynamic and category-specific access to over 200+ specialized tools covering market data, on-chain analytics, portfolio tracking, security analysis, and more.
