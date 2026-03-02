@@ -2,7 +2,7 @@ import { Tool } from "@modelcontextprotocol/sdk/types"
 
 export const supportedTools :Tool[]= [
   {
-    "name": "asset_platforms_browser",
+    "name": "get_asset_platforms",
     "description": "This endpoint allows you to **query all the asset platforms on HIVE_DATASOURCE_ONE**",
     "inputSchema": {
       "type": "object",
@@ -18,7 +18,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "coins_index",
+    "name": "get_coins_index",
     "description": "This endpoint allows you to **query all the metadata (image, websites, socials, description, contract address, etc.) and market data (price, ATH, exchange tickers, etc.) of a coin from the HIVE_DATASOURCE_ONE coin page based on a particular coin ID**",
     "inputSchema": {
       "type": "object",
@@ -62,7 +62,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "coins_categories_browser",
+    "name": "get_categories",
     "description": "This endpoint allows you to **query all the coins categories on HIVE_DATASOURCE_ONE**",
     "inputSchema": {
       "type": "object",
@@ -70,7 +70,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "coins_list_browser",
+    "name": "get_coins_list",
     "description": "This endpoint allows you to **query all the supported coins on HIVE_DATASOURCE_ONE with coins ID, name and symbol**",
     "inputSchema": {
       "type": "object",
@@ -91,7 +91,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "new_coins_list_browser",
+    "name": "get_new_coins",
     "description": "This endpoint allows you to **query the latest 200 coins that recently listed on HIVE_DATASOURCE_ONE**",
     "inputSchema": {
       "type": "object",
@@ -99,7 +99,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "coins_market_data_browser",
+    "name": "get_coins_market_data",
     "description": "This endpoint allows you to **query all the supported coins with price, market cap, volume and market related data**",
     "inputSchema": {
       "type": "object",
@@ -230,7 +230,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "gainers_losers_browser",
+    "name": "get_gainers_losers",
     "description": "This endpoint allows you to **query the top 30 coins with largest price gain and loss by a specific time duration**",
     "inputSchema": {
       "type": "object",
@@ -266,7 +266,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "contract_coins_browser",
+    "name": "get_contract_coin",
     "description": "This endpoint allows you to **query all the metadata (image, websites, socials, description, contract address, etc.) and market data (price, ATH, exchange tickers, etc.) of a coin from the HIVE_DATASOURCE_ONE coin page based on an asset platform and a particular token contract address**",
     "inputSchema": {
       "type": "object",
@@ -281,7 +281,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "range_contract_coins_market_chart_browser",
+    "name": "get_contract_market_chart_range",
     "description": "This endpoint allows you to **get the historical chart data within certain time range in UNIX along with price, market cap and 24hr volume based on asset platform and particular token contract address**",
     "inputSchema": {
       "type": "object",
@@ -343,7 +343,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "coins_history_browser",
+    "name": "get_coin_history",
     "description": "This endpoint allows you to **query the historical data (price, market cap, 24hrs volume, ...) at a given date for a coin based on a particular coin ID**",
     "inputSchema": {
       "type": "object",
@@ -363,7 +363,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "range_coins_market_chart_browser",
+    "name": "get_coin_market_chart_range",
     "description": "This endpoint allows you to **get the historical chart data of a coin within certain time range in UNIX along with price, market cap and 24hr volume based on particular coin ID**",
     "inputSchema": {
       "type": "object",
@@ -422,7 +422,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "range_coins_ohlc_browser",
+    "name": "get_coin_ohlc_range",
     "description": "This endpoint allows you to **get the OHLC chart (Open, High, Low, Close) of a coin within a range of timestamp based on particular coin ID**",
     "inputSchema": {
       "type": "object",
@@ -454,7 +454,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "global_browser",
+    "name": "get_global_stats",
     "description": "This endpoint allows you **query cryptocurrency global data including active cryptocurrencies, markets, total crypto market cap and etc**",
     "inputSchema": {
       "type": "object",
@@ -462,7 +462,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "id_nfts_browser",
+    "name": "get_nft",
     "description": "This endpoint allows you to **query all the NFT data (name, floor price, 24hr volume ...) based on the NFT collection ID**",
     "inputSchema": {
       "type": "object",
@@ -474,7 +474,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "list_nfts_browser",
+    "name": "get_nfts",
     "description": "This endpoint allows you to **query all supported NFTs with ID, contract address, name, asset platform ID and symbol on HIVE_DATASOURCE_ONE**",
     "inputSchema": {
       "type": "object",
@@ -507,7 +507,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "nfts_market_chart_browser",
+    "name": "get_nft_market_chart",
     "description": "This endpoint allows you **query historical market data of a NFT collection, including floor price, market cap, and 24hr volume, by number of days away from now**",
     "inputSchema": {
       "type": "object",
@@ -523,7 +523,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "onchain_categories_browser",
+    "name": "get_onchain_categories",
     "description": "This endpoint allows you to **query all the supported categories on HIVE_DATASOURCE_ONE_CONSOLE**",
     "inputSchema": {
       "type": "object",
@@ -549,7 +549,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "pools_onchain_categories_browser",
+    "name": "get_pools_by_category",
     "description": "This endpoint allows you to **query all the pools based on the provided category ID**",
     "inputSchema": {
       "type": "object",
@@ -583,7 +583,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "onchain_networks_browser",
+    "name": "get_networks",
     "description": "This endpoint allows you to **query all the supported networks on HIVE_DATASOURCE_ONE_CONSOLE**",
     "inputSchema": {
       "type": "object",
@@ -596,7 +596,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "networks_onchain_new_pools_browser",
+    "name": "get_new_pools",
     "description": "This endpoint allows you to **query all the latest pools across all networks on HIVE_DATASOURCE_ONE_CONSOLE**",
     "inputSchema": {
       "type": "object",
@@ -613,7 +613,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "network_networks_onchain_new_pools_browser",
+    "name": "get_new_pools_by_network",
     "description": "This endpoint allows you to **query all the latest pools based on provided network**",
     "inputSchema": {
       "type": "object",
@@ -633,7 +633,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "networks_onchain_trending_pools_browser",
+    "name": "get_trending_pools",
     "description": "This endpoint allows you to **query all the trending pools across all networks on HIVE_DATASOURCE_ONE_CONSOLE**",
     "inputSchema": {
       "type": "object",
@@ -660,7 +660,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "network_networks_onchain_trending_pools_browser",
+    "name": "get_trending_pools_by_network",
     "description": "This endpoint allows you to **query the trending pools based on the provided network**",
     "inputSchema": {
       "type": "object",
@@ -690,7 +690,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "networks_onchain_dexes_browser",
+    "name": "get_dexes",
     "description": "This endpoint allows you to **query all the supported decentralized exchanges (DEXs) based on the provided network on HIVE_DATASOURCE_ONE_CONSOLE**",
     "inputSchema": {
       "type": "object",
@@ -706,7 +706,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "pools_networks_onchain_dexes_browser",
+    "name": "get_pools_by_dex",
     "description": "This endpoint allows you to **query all the top pools based on the provided network and decentralized exchange (DEX)**",
     "inputSchema": {
       "type": "object",
@@ -737,7 +737,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "networks_onchain_pools_browser",
+    "name": "get_pools",
     "description": "This endpoint allows you to **query all the top pools based on the provided network**",
     "inputSchema": {
       "type": "object",
@@ -765,7 +765,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "address_networks_onchain_pools_browser",
+    "name": "get_pools_by_address",
     "description": "This endpoint allows you to **query the specific pool based on the provided network and pool address**",
     "inputSchema": {
       "type": "object",
@@ -788,7 +788,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "pools_networks_onchain_info_browser",
+    "name": "get_pool_info",
     "description": "This endpoint allows you to **query pool metadata (base and quote token details, image, socials, websites, description, contract address, etc.) based on a provided pool contract address on a network**",
     "inputSchema": {
       "type": "object",
@@ -803,7 +803,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "timeframe_pools_networks_onchain_ohlcv_browser",
+    "name": "get_pool_ohlcv",
     "description": "This endpoint allows you to **get the OHLCV chart (Open, High, Low, Close, Volume) of a pool based on the provided pool address on a network**",
     "inputSchema": {
       "type": "object",
@@ -854,7 +854,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "pools_networks_onchain_trades_browser",
+    "name": "get_pool_trades",
     "description": "This endpoint allows you to **query the last 300 trades in the past 24 hours based on the provided pool address**",
     "inputSchema": {
       "type": "object",
@@ -877,7 +877,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "address_networks_onchain_tokens_browser",
+    "name": "get_tokens_by_address",
     "description": "This endpoint allows you to **query specific token data based on the provided token contract address on a network**",
     "inputSchema": {
       "type": "object",
@@ -899,7 +899,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "tokens_networks_onchain_info_browser",
+    "name": "get_token_info",
     "description": "This endpoint allows you to **query token metadata (name, symbol,  HIVE_DATASOURCE_ONE ID, image, socials, websites, description, etc.) based on a provided token contract address on a network**",
     "inputSchema": {
       "type": "object",
@@ -914,7 +914,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "tokens_networks_onchain_top_holders_browser",
+    "name": "get_token_top_holders",
     "description": "This endpoint allows you to **query top token holders based on the provided token contract address on a network**",
     "inputSchema": {
       "type": "object",
@@ -933,7 +933,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "tokens_networks_onchain_holders_chart_browser",
+    "name": "get_token_holders_chart",
     "description": "This endpoint allows you to **get the historical token holders chart based on the provided token contract address on a network**",
     "inputSchema": {
       "type": "object",
@@ -957,7 +957,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "timeframe_tokens_networks_onchain_ohlcv_browser",
+    "name": "get_token_ohlcv",
     "description": "This endpoint allows you to **get the OHLCV chart (Open, High, Low, Close, Volume) of a token based on the provided token address on a network**",
     "inputSchema": {
       "type": "object",
@@ -1004,7 +1004,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "tokens_networks_onchain_pools_browser",
+    "name": "get_token_pools",
     "description": "This endpoint allows you to **query top pools based on the provided token contract address on a network**",
     "inputSchema": {
       "type": "object",
@@ -1036,7 +1036,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "tokens_networks_onchain_trades_browser",
+    "name": "get_token_trades",
     "description": "This endpoint allows you to **query the last 300 trades in the past 24 hours, across all pools, based on the provided token contract address on a network**",
     "inputSchema": {
       "type": "object",
@@ -1055,7 +1055,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "pools_onchain_megafilter_browser",
+    "name": "filter_pools",
     "description": "This endpoint allows you to **query pools based on various filters across all networks on HIVE_DATASOURCE_ONE_CONSOLE**",
     "inputSchema": {
       "type": "object",
@@ -1088,7 +1088,7 @@ export const supportedTools :Tool[]= [
         },
         "checks": {
           "type": "string",
-          "description": "filter options for various checks, comma-separated if more than one <br> Available values: `no_honeypot`, `good_gt_score`, `on_coingecko`, `has_social`"
+          "description": "filter options for various checks, comma-separated if more than one <br> Available values: `no_honeypot`, `good_gt_score`, `has_social`"
         },
         "dexes": {
           "type": "string",
@@ -1200,7 +1200,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "pools_onchain_trending_search_browser",
+    "name": "search_trending_pools",
     "description": "This endpoint allows you to **query all the trending search pools across all networks on HIVE_DATASOURCE_ONE_CONSOLE**",
     "inputSchema": {
       "type": "object",
@@ -1217,7 +1217,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "search_onchain_pools_browser",
+    "name": "search_pools",
     "description": "This endpoint allows you to **search for pools on a network**",
     "inputSchema": {
       "type": "object",
@@ -1242,7 +1242,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "addresses_networks_simple_onchain_token_price_browser",
+    "name": "get_onchain_token_price",
     "description": "This endpoint allows you to **get token price based on the provided token contract address on a network**",
     "inputSchema": {
       "type": "object",
@@ -1277,7 +1277,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "search_browser",
+    "name": "search_all",
     "description": "This endpoint allows you to **search for coins, categories and markets listed on HIVE_DATASOURCE_ONE**",
     "inputSchema": {
       "type": "object",
@@ -1290,7 +1290,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "search_trending_browser",
+    "name": "get_trending",
     "description": "This endpoint allows you **query trending search coins, NFTs and categories on HIVE_DATASOURCE_ONE in the last 24 hours**",
     "inputSchema": {
       "type": "object",
@@ -1303,7 +1303,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "simple_price_browser",
+    "name": "get_price",
     "description": "This endpoint allows you to **query the prices of one or more coins by using their unique Coin API IDs**",
     "inputSchema": {
       "type": "object",
@@ -1378,7 +1378,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "simple_supported_vs_currencies_browser",
+    "name": "get_supported_currencies",
     "description": "This endpoint allows you to **query all the supported currencies on HIVE_DATASOURCE_ONE**",
     "inputSchema": {
       "type": "object",
@@ -1386,7 +1386,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "id_simple_token_price_browser",
+    "name": "get_token_price_by_contract",
     "description": "This endpoint allows you to **query one or more token prices using their token contract addresses**",
     "inputSchema": {
       "type": "object",
@@ -1448,7 +1448,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "coin_tickers_data",
+    "name": "get_coin_tickers",
     "description": "This endpoint allows you to **query the coin tickers on both centralized exchange (CEX) and decentralized exchange (DEX) based on a particular coin ID**",
     "inputSchema": {
       "type": "object",
@@ -1484,7 +1484,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "coin_historical_chart",
+    "name": "get_coin_historical_chart",
     "description": "This endpoint allows you to **get the historical chart data of a coin including time in UNIX, price, market cap and 24hr volume based on particular coin ID**",
     "inputSchema": {
       "type": "object",
@@ -1544,7 +1544,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "coins_categories_market_data",
+    "name": "get_categories_market_data",
     "description": "This endpoint allows you to **query all the coins categories with market data (market cap, volume, ...) on HIVE_DATASOURCE_ONE**",
     "inputSchema": {
       "type": "object",
@@ -1557,7 +1557,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "exchanges_data",
+    "name": "get_exchanges",
     "description": "This endpoint allows you to **query all the supported exchanges with exchanges' data (ID, name, country, ...) that have active trading volumes on HIVE_DATASOURCE_ONE**",
     "inputSchema": {
       "type": "object",
@@ -1574,7 +1574,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "exchanges_list_simple",
+    "name": "get_exchanges_list",
     "description": "This endpoint allows you to **query all the exchanges with ID and name**",
     "inputSchema": {
       "type": "object",
@@ -1582,7 +1582,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "exchange_details",
+    "name": "get_exchange",
     "description": "This endpoint allows you to **query exchange's data (name, year established, country, ...), exchange volume in BTC and top 100 tickers based on exchange's ID**",
     "inputSchema": {
       "type": "object",
@@ -1606,7 +1606,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "exchange_tickers_data",
+    "name": "get_exchange_tickers",
     "description": "This endpoint allows you to **query exchange's tickers based on exchange's ID**",
     "inputSchema": {
       "type": "object",
@@ -1650,7 +1650,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "exchange_volume_chart",
+    "name": "get_exchange_volume_chart",
     "description": "This endpoint allows you to **query the historical volume chart data with time in UNIX and trading volume data in BTC based on exchange's ID**",
     "inputSchema": {
       "type": "object",
@@ -1671,7 +1671,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "exchange_volume_chart_range",
+    "name": "get_exchange_volume_chart_range",
     "description": "This endpoint allows you to **query the historical volume chart data within a specific time range with time in UNIX and trading volume data in BTC based on exchange's ID**",
     "inputSchema": {
       "type": "object",
@@ -1697,7 +1697,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "derivatives_tickers_data",
+    "name": "get_derivatives_tickers",
     "description": "This endpoint allows you to **query all the tickers from derivatives exchanges on HIVE_DATASOURCE_ONE**",
     "inputSchema": {
       "type": "object",
@@ -1714,7 +1714,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "derivatives_exchanges_data",
+    "name": "get_derivatives_exchanges",
     "description": "This endpoint allows you to **query all the derivatives exchanges with related data (ID, name, open interest, ...) on HIVE_DATASOURCE_ONE**",
     "inputSchema": {
       "type": "object",
@@ -1735,7 +1735,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "derivative_exchange_details",
+    "name": "get_derivatives_exchange",
     "description": "This endpoint allows you to **query the derivatives exchange's related data (ID, name, open interest, ...) based on the exchanges' ID**",
     "inputSchema": {
       "type": "object",
@@ -1759,7 +1759,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "derivatives_exchanges_list",
+    "name": "get_derivatives_exchanges_list",
     "description": "This endpoint allows you to **query all the derivatives exchanges with ID and name**",
     "inputSchema": {
       "type": "object",
@@ -1767,7 +1767,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "btc_exchange_rates",
+    "name": "get_btc_exchange_rates",
     "description": "This endpoint allows you to **query BTC exchange rates with other currencies**. You may use this endpoint to convert the response data, which is originally in BTC, to other currencies.",
     "inputSchema": {
       "type": "object",
@@ -1775,7 +1775,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "global_defi_data",
+    "name": "get_global_defi",
     "description": "This endpoint allows you **query top 100 cryptocurrency global decentralized finance (DeFi) data including DeFi market cap, trading volume**",
     "inputSchema": {
       "type": "object",
@@ -1783,7 +1783,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "global_market_cap_chart",
+    "name": "get_global_market_cap_chart",
     "description": "This endpoint allows you to **query global market cap chart data**. Get historical global market cap chart data with timestamps.",
     "inputSchema": {
       "type": "object",
@@ -1814,7 +1814,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "companies_crypto_treasury",
+    "name": "get_companies_treasury",
     "description": "This endpoint allows you to **query public companies Bitcoin or Ethereum holdings**. Get detailed information about public companies and their cryptocurrency treasury holdings.",
     "inputSchema": {
       "type": "object",
@@ -1834,7 +1834,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "network_trending_pools",
+    "name": "get_network_trending_pools",
     "description": "This endpoint allows you to **query the trending pools based on the provided network**",
     "inputSchema": {
       "type": "object",
@@ -1870,7 +1870,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "multi_pools_data",
+    "name": "get_multi_pools",
     "description": "This endpoint allows you to **query multiple pools data based on the provided pool addresses on a network**. You can query up to 30 pool addresses per request.",
     "inputSchema": {
       "type": "object",
@@ -1895,7 +1895,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "multi_tokens_data",
+    "name": "get_multi_tokens",
     "description": "This endpoint allows you to **query multiple tokens data based on the provided token contract addresses on a network**. You can query up to 50 contract addresses per request (Paid plan subscribers only).",
     "inputSchema": {
       "type": "object",
@@ -1923,7 +1923,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "tokens_recent_updates",
+    "name": "get_recently_updated_tokens",
     "description": "This endpoint allows you to **query the most recently updated tokens information (metadata) across all networks**. Returns tokens with recently updated metadata such as socials, websites, descriptions, etc.",
     "inputSchema": {
       "type": "object",
@@ -1944,24 +1944,148 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "defi_protocols_list",
+    "name": "get_nft_tickers",
+    "description": "Execute the get_nft_tickers tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "get_nft_by_contract",
+    "description": "Execute the get_nft_by_contract tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "get_nft_markets",
+    "description": "Execute the get_nft_markets tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "get_circulating_supply_chart",
+    "description": "Execute the get_circulating_supply_chart tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "get_circulating_supply_chart_range",
+    "description": "Execute the get_circulating_supply_chart_range tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "get_coin_ohlc",
+    "description": "Execute the get_coin_ohlc tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "get_total_supply_chart",
+    "description": "Execute the get_total_supply_chart tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "get_total_supply_chart_range",
+    "description": "Execute the get_total_supply_chart_range tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "get_entities_list",
+    "description": "Execute the get_entities_list tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "get_treasury_by_entity",
+    "description": "Execute the get_treasury_by_entity tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "get_treasury_holding_chart",
+    "description": "Execute the get_treasury_holding_chart tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "get_treasury_transaction_history",
+    "description": "Execute the get_treasury_transaction_history tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "get_token_lists",
+    "description": "Execute the get_token_lists tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "get_onchain_token_top_traders",
+    "description": "Execute the get_onchain_token_top_traders tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "get_nft_contract_market_chart",
+    "description": "Execute the get_nft_contract_market_chart tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "get_contract_market_chart",
+    "description": "Execute the get_contract_market_chart tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "get_defi_protocols",
     "description": "Get a list of DeFi protocols with TVL metrics. Supports pagination with limit (max 100) and offset parameters. Default limit is 50.",
     "inputSchema": {
       "type": "object",
       "properties": {
         "limit": {
           "type": "number",
-          "description": "Maximum number of protocols to return (default: 50, max: 100)"
-        },
-        "offset": {
-          "type": "number",
-          "description": "Number of protocols to skip for pagination (default: 0)"
+          "description": "Maximum number of protocols to return (default: 200, max: 1000)"
         }
       }
     }
   },
   {
-    "name": "defi_protocol_details",
+    "name": "get_defi_protocol",
     "description": "Get detailed information about a specific DeFi protocol including historical TVL data",
     "inputSchema": {
       "type": "object",
@@ -1977,7 +2101,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "protocol_tvl_current",
+    "name": "get_protocol_tvl",
     "description": "Get current TVL (Total Value Locked) for a specific protocol as a single number",
     "inputSchema": {
       "type": "object",
@@ -1993,7 +2117,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "protocol_fees_data",
+    "name": "get_protocol_fees",
     "description": "Get fee data for a specific protocol",
     "inputSchema": {
       "type": "object",
@@ -2009,7 +2133,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "blockchain_chains_list",
+    "name": "get_chains",
     "description": "Get a list of all blockchain networks with their current TVL",
     "inputSchema": {
       "type": "object",
@@ -2022,7 +2146,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "chain_tvl_history",
+    "name": "get_chain_tvl_history",
     "description": "Get historical TVL data for a specific blockchain",
     "inputSchema": {
       "type": "object",
@@ -2038,7 +2162,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "chains_tvl_historical_all",
+    "name": "get_chains_tvl_history",
     "description": "Get historical TVL data for all chains",
     "inputSchema": {
       "type": "object",
@@ -2046,33 +2170,39 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "yield_pools_list",
+    "name": "get_yield_pools",
     "description": "Get yield pools with APY data. Supports pagination (limit max 100, offset) and filtering by minTvl. Default limit is 50.",
     "inputSchema": {
       "type": "object",
       "properties": {
         "limit": {
           "type": "number",
-          "description": "Maximum number of pools to return (default: 50, max: 100)",
+          "description": "Maximum number of pools to return (default: 200, max: 1000)",
           "minimum": 1,
-          "maximum": 100,
-          "default": 50
-        },
-        "offset": {
-          "type": "number",
-          "description": "Number of pools to skip for pagination (default: 0)",
-          "default": 0
-        },
-        "minTvl": {
-          "type": "number",
-          "description": "Minimum TVL in USD to filter pools (default: 0)",
-          "default": 0
+          "maximum": 1000,
+          "default": 200
         }
       }
     }
   },
   {
-    "name": "yield_pool_chart_history",
+    "name": "get_yield_pool",
+    "description": "Get detailed information about a specific yield pool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "poolId": {
+          "type": "string",
+          "description": "Pool identifier (get from yield pools list)"
+        }
+      },
+      "required": [
+        "poolId"
+      ]
+    }
+  },
+  {
+    "name": "get_yield_pool_chart",
     "description": "Get historical chart data for a specific yield pool showing APY and TVL over time",
     "inputSchema": {
       "type": "object",
@@ -2088,7 +2218,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "stablecoins_list",
+    "name": "get_stablecoins",
     "description": "Get all stablecoins with their market cap and chain distribution. Results are limited to prevent oversized responses.",
     "inputSchema": {
       "type": "object",
@@ -2104,7 +2234,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "stablecoin_chains_list",
+    "name": "get_stablecoin_chains",
     "description": "Get list of all chains with stablecoin data and their TVL.",
     "inputSchema": {
       "type": "object",
@@ -2112,7 +2242,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "stablecoin_charts_global",
+    "name": "get_stablecoin_charts_global",
     "description": "Get historical chart data for all stablecoins showing market cap over time. Response is limited to prevent MCP timeouts.",
     "inputSchema": {
       "type": "object",
@@ -2128,7 +2258,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "stablecoin_charts_by_chain",
+    "name": "get_stablecoin_charts_by_chain",
     "description": "Get historical chart data for stablecoins on a specific blockchain. Response is limited to prevent MCP timeouts.",
     "inputSchema": {
       "type": "object",
@@ -2151,7 +2281,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "stablecoin_prices_current",
+    "name": "get_stablecoin_prices",
     "description": "Get current prices of stablecoins. Response is limited to prevent MCP timeouts.",
     "inputSchema": {
       "type": "object",
@@ -2167,7 +2297,23 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "options_trading_overview",
+    "name": "stablecoin_data_by_id",
+    "description": "Get stablecoin data (DISABLED for MCP: 14MB response causes timeouts). Returns error message with alternatives.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "stablecoinId": {
+          "type": "string",
+          "description": "Stablecoin ID from the stablecoins list (e.g., \"1\" for Tether)"
+        }
+      },
+      "required": [
+        "stablecoinId"
+      ]
+    }
+  },
+  {
+    "name": "get_options_overview",
     "description": "Get options trading overview data across all chains and protocols with historical charts",
     "inputSchema": {
       "type": "object",
@@ -2175,7 +2321,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "options_trading_by_chain",
+    "name": "get_options_by_chain",
     "description": "Get options trading data for a specific blockchain",
     "inputSchema": {
       "type": "object",
@@ -2191,7 +2337,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "options_protocol_summary",
+    "name": "get_options_protocol",
     "description": "Get detailed summary for a specific options trading protocol",
     "inputSchema": {
       "type": "object",
@@ -2207,7 +2353,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "dex_volumes_overview",
+    "name": "get_dex_volumes",
     "description": "Get DEX volumes overview across all protocols",
     "inputSchema": {
       "type": "object",
@@ -2220,7 +2366,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "dex_volume_specific",
+    "name": "get_dex_volume",
     "description": "Get volume data for a specific DEX with key metrics and recent chart data",
     "inputSchema": {
       "type": "object",
@@ -2236,7 +2382,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "dex_volumes_chain_specific",
+    "name": "get_dex_volumes_by_chain",
     "description": "Get DEX volumes overview for a specific blockchain with historical data",
     "inputSchema": {
       "type": "object",
@@ -2252,32 +2398,22 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "protocol_fees_overview",
+    "name": "get_fees_overview",
     "description": "Get protocol fees overview. Supports pagination (limit max 100, offset) and filtering by minFees. Default limit is 50.",
     "inputSchema": {
       "type": "object",
       "properties": {
         "limit": {
           "type": "number",
-          "description": "Maximum number of protocols to return (default: 50, max: 100)",
+          "description": "Maximum number of protocols to return (default: 200, max: 1000)",
           "minimum": 1,
-          "maximum": 100
-        },
-        "offset": {
-          "type": "number",
-          "description": "Number of protocols to skip for pagination (default: 0)",
-          "default": 0
-        },
-        "minFees": {
-          "type": "number",
-          "description": "Minimum 24h fees in USD to filter protocols (default: 0)",
-          "default": 0
+          "maximum": 1000
         }
       }
     }
   },
   {
-    "name": "chain_fees_overview",
+    "name": "get_chain_fees",
     "description": "Get fees overview for a specific blockchain with historical data and protocol breakdown",
     "inputSchema": {
       "type": "object",
@@ -2293,7 +2429,175 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "user_history",
+    "name": "defillama_get_bridges",
+    "description": "Get comprehensive list of all cross-chain bridges with metrics including total value locked, volume, and supported chains.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "defillama_get_bridge_by_id",
+    "description": "Get detailed information about a specific bridge including supported tokens, chains, and historical volume data.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "defillama_get_bridge_volume",
+    "description": "Get bridge volume data for a specific chain showing inflows, outflows, and net flows across different bridges.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "defillama_get_hacks",
+    "description": "Get comprehensive list of DeFi hacks, exploits, and security incidents with details on amounts lost, affected protocols, and attack vectors.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "defillama_get_treasuries",
+    "description": "Get list of all protocol treasuries showing their holdings, value in USD, and asset composition across chains.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "defillama_get_treasury",
+    "description": "Get detailed treasury information for a specific protocol including token holdings, historical changes, and chain distribution.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "defillama_get_raises",
+    "description": "Get comprehensive list of all protocol funding rounds including amounts raised, investors, valuation, and funding categories.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "defillama_get_emissions",
+    "description": "Get token emission and unlock schedules for all protocols including vesting events, cliff unlocks, and circulation supply changes.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "get_protocol_fee_summary",
+    "description": "Get comprehensive fee summary for a specific protocol including revenue breakdown, fee tiers, and historical fee data.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "get_current_prices",
+    "description": "Get current token prices from DeFiLlama. Supports multiple tokens across different chains with price aggregation.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "get_historical_prices",
+    "description": "Get historical token prices at a specific timestamp from DeFiLlama. Useful for portfolio valuations and historical analysis.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "get_batch_historical_prices",
+    "description": "Get historical prices for multiple tokens at multiple timestamps in a single request. Efficient for bulk historical data retrieval.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "get_price_chart",
+    "description": "Get price chart data for a token over a time range. Returns timestamped price points for charting and analysis.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "get_price_percentage_change",
+    "description": "Get percentage price change for tokens over specified time periods. Useful for tracking price movements.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "get_first_prices",
+    "description": "Get the earliest recorded price for tokens. Useful for determining when tokens were first tracked.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "get_block_by_timestamp",
+    "description": "Get the block number closest to a given timestamp for a specific chain. Useful for historical blockchain queries.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "get_stablecoin_dominance",
+    "description": "Get stablecoin dominance metrics showing market share and distribution across chains and stablecoin types.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "get_defi_oracles",
+    "description": "Get list of DeFi oracles with their TVL secured and protocols using them.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "get_defi_forks",
+    "description": "Get list of protocol forks with TVL data showing forked-from relationships in DeFi.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "get_defi_categories",
+    "description": "Get DeFi protocol categories with aggregated TVL data for each category.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "get_defi_entities",
+    "description": "Get list of DeFi entities (companies/organizations) with their associated protocols and combined TVL.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "get_wallet_history",
     "description": "Get transaction history for a user address",
     "inputSchema": {
       "type": "object",
@@ -2331,7 +2635,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "user_total_balance",
+    "name": "get_wallet_balance",
     "description": "Get net assets on multiple chains or single chain",
     "inputSchema": {
       "type": "object",
@@ -2359,7 +2663,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "user_token_balances",
+    "name": "get_wallet_token_balances",
     "description": "Get token balances on all supported chains",
     "inputSchema": {
       "type": "object",
@@ -2386,7 +2690,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "get_user_protocol",
+    "name": "get_wallet_protocol_positions",
     "description": "Get user positions in a protocol",
     "inputSchema": {
       "type": "object",
@@ -2409,7 +2713,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "get_detailed_protocol_list",
+    "name": "get_wallet_defi_positions",
     "description": "Get user portfolios on a chain in protocol",
     "inputSchema": {
       "type": "object",
@@ -2432,7 +2736,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "get_detailed_protocol_list_on_all_chain",
+    "name": "get_wallet_defi_positions_all_chains",
     "description": "Get user portfolios on all supported chains",
     "inputSchema": {
       "type": "object",
@@ -2454,7 +2758,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "get_nft_list",
+    "name": "get_wallet_nfts",
     "description": "Get user NFT list for a specific chain",
     "inputSchema": {
       "type": "object",
@@ -2482,7 +2786,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "get_all_nft",
+    "name": "get_wallet_all_nfts",
     "description": "Get user NFT list across all chains",
     "inputSchema": {
       "type": "object",
@@ -2509,72 +2813,19 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "describe_onchain_transaction",
+    "name": "explain_transaction",
     "description": "Get detailed explanation of a transaction",
     "inputSchema": {
       "type": "object",
       "properties": {
-        "tx": {
-          "type": "object",
-          "description": "Transaction object to explain",
-          "properties": {
-            "chainId": {
-              "type": "number",
-              "description": "Chain ID",
-              "example": 1
-            },
-            "from": {
-              "type": "string",
-              "description": "The address the transaction is sent from",
-              "example": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85"
-            },
-            "to": {
-              "type": "string",
-              "description": "The address the transaction is directed to",
-              "example": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb81"
-            },
-            "value": {
-              "type": "string",
-              "description": "Integer of the value send with this transaction (in hex)",
-              "example": "0x16345785d8a0000"
-            },
-            "data": {
-              "type": "string",
-              "description": "The compiled code of a contract OR the hash of the invoked method signature and encoded parameters",
-              "example": "0x"
-            },
-            "gas": {
-              "type": "string",
-              "description": "Integer of the gas provided for the transaction execution (in hex)",
-              "example": "0x5208"
-            },
-            "maxFeePerGas": {
-              "type": "string",
-              "description": "Maximum amount you're willing to pay (in hex)",
-              "example": "0x4e3b29200"
-            },
-            "maxPriorityFeePerGas": {
-              "type": "string",
-              "description": "The part of the fee that goes to the miner (in hex)",
-              "example": "0x4e3b29200"
-            },
-            "nonce": {
-              "type": "string",
-              "description": "Integer of a nonce (in hex)",
-              "example": "0x1"
-            }
-          },
-          "required": [
-            "chainId",
-            "from",
-            "to",
-            "value",
-            "data"
-          ]
+        "tx_id": {
+          "type": "string",
+          "description": "Transaction hash",
+          "example": "0xabc123..."
         }
       },
       "required": [
-        "tx"
+        "tx_id"
       ]
     }
   },
@@ -2629,7 +2880,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "protocol_info",
+    "name": "get_protocol_info",
     "description": "Get detailed information about a protocol",
     "inputSchema": {
       "type": "object",
@@ -2646,7 +2897,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "protocol_list",
+    "name": "get_protocols",
     "description": "Get list of protocols on a chain",
     "inputSchema": {
       "type": "object",
@@ -2660,6 +2911,118 @@ export const supportedTools :Tool[]= [
       "required": [
         "chain_id"
       ]
+    }
+  },
+  {
+    "name": "get_supported_chains",
+    "description": "Get list of all blockchain chains supported by DeBank, including chain IDs, names, and native tokens.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "get_chain_details",
+    "description": "Get detailed information about a specific blockchain chain including name, native token, explorer URL, and wrapped token address.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "get_debank_token_info",
+    "description": "Get detailed token information including price, symbol, decimals, and protocol association on a specific chain.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "get_tokens_by_ids",
+    "description": "Get information for multiple tokens at once by providing a list of token IDs on a specific chain.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "get_debank_token_price_history",
+    "description": "Get historical price data for a token on a specific chain over a given time range.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "get_wallet_active_chains",
+    "description": "Get list of chains where a wallet address has had activity or holds assets.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "get_wallet_token_approvals",
+    "description": "Get list of token approvals (allowances) granted by a wallet address, useful for security auditing.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "simulate_transaction",
+    "description": "Simulate a transaction before execution to preview balance changes, gas costs, and potential risks.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "get_debank_top_holders",
+    "description": "Get top holders of a specific token including their balances and percentage of total supply.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "get_wallet_nft_approvals",
+    "description": "Get list of NFT approvals granted by a wallet address, useful for security auditing of NFT permissions.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "get_wallet_chain_balance",
+    "description": "Get wallet balance on a specific chain including USD value of all token holdings.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "get_portfolio_history",
+    "description": "Get historical portfolio value curve across all chains for a wallet address over time.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "get_chain_portfolio_history",
+    "description": "Get historical portfolio value curve for a specific chain for a wallet address over time.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "get_all_chain_history",
+    "description": "Get transaction history across all chains for a wallet address with token transfer details.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
     }
   },
   {
@@ -2714,13 +3077,19 @@ export const supportedTools :Tool[]= [
     "inputSchema": {
       "type": "object",
       "properties": {
+        "chainId": {
+          "type": "string",
+          "description": "The chain ID (1=Ethereum, 56=BSC, 137=Polygon, 42161=Arbitrum)",
+          "example": "1"
+        },
         "address": {
           "type": "string",
-          "description": "The blockchain address to check for malicious activity",
+          "description": "The address to check for malicious activity",
           "example": "0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb"
         }
       },
       "required": [
+        "chainId",
         "address"
       ]
     }
@@ -2749,19 +3118,19 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "get_user_approvals",
+    "name": "get_wallet_approvals",
     "description": "Get comprehensive security analysis of all token and NFT approvals for a user address, showing which contracts have spending permissions. Helps identify risky approvals, potential approval exploits, and malicious spenders. Returns approved amounts, spender addresses, risk levels, and security recommendations.",
     "inputSchema": {
       "type": "object",
       "properties": {
         "chainId": {
           "type": "string",
-          "description": "The chain ID (1=Ethereum, 56=BSC, 137=Polygon, 42161=Arbitrum, 43114=Avalanche, 10=Optimism, 25=Cronos, 250=Fantom)",
+          "description": "The chain ID (1=Ethereum, 56=BSC, 137=Polygon)",
           "example": "1"
         },
         "address": {
           "type": "string",
-          "description": "EOA (user wallet) address to check approvals for",
+          "description": "User address to check approvals for",
           "example": "0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb"
         }
       },
@@ -2789,7 +3158,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "detect_phishing_site",
+    "name": "check_phishing_site",
     "description": "Detect if a URL is a phishing site by checking against comprehensive phishing databases. Returns phishing status, similar legitimate sites, and risk indicators.",
     "inputSchema": {
       "type": "object",
@@ -2806,73 +3175,200 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "decode_abi_data",
+    "name": "decode_abi",
     "description": "Decode ABI data to understand smart contract interactions, function calls, and parameters. Helps identify malicious transactions, understand approval details, and detect anomalies in contract calls.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "chainId": {
+          "type": "string",
+          "description": "The chain ID",
+          "example": "1"
+        },
+        "contract_address": {
+          "type": "string",
+          "description": "Contract address",
+          "example": "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D"
+        },
+        "abi_data": {
+          "type": "string",
+          "description": "The ABI encoded data to decode",
+          "example": "0xa9059cbb000000000000000000000000..."
+        }
+      },
+      "required": [
+        "chainId",
+        "contract_address",
+        "abi_data"
+      ]
+    }
+  },
+  {
+    "name": "simulate_evm_transaction",
+    "description": "Simulate an EVM transaction to detect security risks before signing. Returns balance changes, approval changes, gas estimation, and risk assessment. Essential for preventing phishing, token draining, and malicious contract interactions.",
     "inputSchema": {
       "type": "object",
       "properties": {
         "chain_id": {
           "type": "string",
-          "description": "Chain id (ETH: 1, Cronos: 25, BSC: 56, Heco: 128, Polygon: 137, Fantom: 250, KCC: 321, Arbitrum: 42161, Avalanche: 43114)",
+          "description": "Chain ID: 1 (Ethereum), 56 (BSC), 137 (Polygon), 42161 (Arbitrum)",
           "example": "1"
         },
-        "contract_address": {
+        "from": {
           "type": "string",
-          "description": "Contract address - carrying the signer and contract address will help to decode more information",
-          "example": "0x4cc8aa0c6ffbe18534584da9b592aa438733ee66"
+          "description": "Sender wallet address (0x format)",
+          "example": "0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb"
+        },
+        "to": {
+          "type": "string",
+          "description": "Recipient/contract address (0x format)",
+          "example": "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D"
         },
         "data": {
           "type": "string",
-          "description": "Transaction input data (hex string starting with 0x)",
-          "example": "0xa0712d680000000000000000000000000000000000000000000000000000000062fee481"
+          "description": "Transaction calldata hex string starting with 0x",
+          "example": "0x38ed1739..."
         },
-        "input": {
-          "type": "object",
-          "description": "Optional input info object",
-          "properties": {
-            "signer": {
-              "type": "string",
-              "description": "Signer address - carrying the signer and contract address will help to decode more information",
-              "example": "0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb"
-            },
-            "transcation_type": {
-              "type": "string",
-              "description": "Transaction type",
-              "enum": [
-                "common",
-                "eth_signTypedData_v4",
-                "personal_sign",
-                "eth_sign"
-              ],
-              "example": "common"
-            }
-          }
-        },
-        "signer": {
+        "value": {
           "type": "string",
-          "description": "Signer address - carrying the signer and contract address will help to decode more information (alternative to input.signer)",
-          "example": "0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb"
-        },
-        "transcation_type": {
-          "type": "string",
-          "description": "Transaction type (alternative to input.transcation_type)",
-          "enum": [
-            "common",
-            "eth_signTypedData_v4",
-            "personal_sign",
-            "eth_sign"
-          ],
-          "example": "common"
+          "description": "ETH value in wei (optional, default: 0)"
         }
       },
       "required": [
         "chain_id",
+        "from",
+        "to",
         "data"
       ]
     }
   },
   {
-    "name": "list_blockchain_networks",
+    "name": "simulate_solana_transaction",
+    "description": "Simulate a Solana transaction to detect security risks before signing. Analyzes balance changes, program interactions, and risk indicators for base64-encoded Solana transactions.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "transaction": {
+          "type": "string",
+          "description": "Base64-encoded Solana transaction data"
+        }
+      },
+      "required": [
+        "transaction"
+      ]
+    }
+  },
+  {
+    "name": "detect_rugpull",
+    "description": "Detect potential rug-pull schemes for a token contract. Analyzes liquidity removal risks, ownership concentration, backdoor functions, and historical rug-pull patterns.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "chain_id": {
+          "type": "string",
+          "description": "Chain ID: 1 (Ethereum), 56 (BSC), 137 (Polygon)",
+          "example": "1"
+        },
+        "contract_address": {
+          "type": "string",
+          "description": "Token contract address (0x format)"
+        }
+      },
+      "required": [
+        "chain_id",
+        "contract_address"
+      ]
+    }
+  },
+  {
+    "name": "get_token_lock_info",
+    "description": "Retrieve token and LP lock information including lock amounts, unlock dates, lock platforms, and lock percentages. Essential for assessing token credibility and liquidity safety.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "chain_id": {
+          "type": "string",
+          "description": "Chain ID: 1 (Ethereum), 56 (BSC), 137 (Polygon)",
+          "example": "1"
+        },
+        "token_address": {
+          "type": "string",
+          "description": "Token contract address (0x format)"
+        }
+      },
+      "required": [
+        "chain_id",
+        "token_address"
+      ]
+    }
+  },
+  {
+    "name": "get_solana_token_security",
+    "description": "Analyze Solana SPL token security risks including mint authority, freeze authority, supply analysis, and known risk indicators. Essential for verifying Solana token safety.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "contract_address": {
+          "type": "string",
+          "description": "Solana token mint address",
+          "example": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+        }
+      },
+      "required": [
+        "contract_address"
+      ]
+    }
+  },
+  {
+    "name": "get_sui_token_security",
+    "description": "Analyze Sui token security risks including module authority, supply controls, and known risk indicators.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "contract_address": {
+          "type": "string",
+          "description": "Sui token type address (e.g., 0x2::sui::SUI)",
+          "example": "0x2::sui::SUI"
+        }
+      },
+      "required": [
+        "contract_address"
+      ]
+    }
+  },
+  {
+    "name": "check_approval_security_v2",
+    "description": "Enhanced approval security analysis (v2) with support for ERC-20, ERC-721, and ERC-1155 tokens. More detailed risk analysis than v1 including NFT approval risks.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "chain_id": {
+          "type": "string",
+          "description": "Chain ID: 1 (Ethereum), 56 (BSC), 137 (Polygon), 42161 (Arbitrum)",
+          "example": "1"
+        },
+        "contract_address": {
+          "type": "string",
+          "description": "Spender contract address (0x format)",
+          "example": "0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45"
+        }
+      },
+      "required": [
+        "chain_id",
+        "contract_address"
+      ]
+    }
+  },
+  {
+    "name": "get_goplus_supported_chains",
+    "description": "List all blockchain networks supported by GoPlus Security API. Returns chain IDs, names, and supported features. Useful for validating chain_id before calling other security tools.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "get_networks_list",
     "description": "Get a list of all blockchain networks supported by HIVE_DATASOURCE_TWO",
     "inputSchema": {
       "type": "object",
@@ -2882,7 +3378,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "check_network_health",
+    "name": "get_network_status",
     "description": "Get the status of a specific blockchain network",
     "inputSchema": {
       "type": "object",
@@ -2901,7 +3397,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "fetch_network_metrics",
+    "name": "get_network_stats",
     "description": "Get metadata and statistics for a given network",
     "inputSchema": {
       "type": "object",
@@ -2920,7 +3416,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "retrieve_token_details",
+    "name": "get_token_details",
     "description": "Get detailed information about a specific token",
     "inputSchema": {
       "type": "object",
@@ -2944,7 +3440,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "fetch_multiple_tokens",
+    "name": "get_tokens",
     "description": "Get detailed information about multiple tokens",
     "inputSchema": {
       "type": "object",
@@ -2981,7 +3477,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "retrieve_token_pricing",
+    "name": "get_token_price",
     "description": "Get real-time or historical prices for a list of tokens",
     "inputSchema": {
       "type": "object",
@@ -3026,7 +3522,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "search_tokens_by_criteria",
+    "name": "filter_tokens",
     "description": "Filter tokens by various criteria with automatic pagination for large results. Supports limit (max 100) and offset parameters for efficient data retrieval.",
     "inputSchema": {
       "type": "object",
@@ -3492,7 +3988,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "list_token_holders",
+    "name": "get_token_holders",
     "description": "Returns list of wallets that hold a given token, ordered by holdings descending. Also has the unique count of holders for that token.",
     "inputSchema": {
       "type": "object",
@@ -3541,8 +4037,8 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "user_token_balances",
-    "description": "Get token balances on all supported chains",
+    "name": "get_wallet_balances",
+    "description": "Get token balances for a wallet",
     "inputSchema": {
       "type": "object",
       "properties": {
@@ -3577,7 +4073,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "calculate_top_holders_percentage",
+    "name": "get_top_holders_percentage",
     "description": "Get the percentage of tokens held by top 10 holders",
     "inputSchema": {
       "type": "object",
@@ -3601,7 +4097,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "fetch_price_chart_data",
+    "name": "get_token_chart_data",
     "description": "Returns bar chart data to track token price changes over time. Can be queried using either a pair address or token address.",
     "inputSchema": {
       "type": "object",
@@ -3674,7 +4170,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "fetch_token_chart_urls",
+    "name": "get_token_chart_urls",
     "description": "Chart images for token pairs",
     "inputSchema": {
       "type": "object",
@@ -3706,7 +4202,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "list_newest_token_contracts",
+    "name": "get_new_tokens",
     "description": "Get a list of the latests token contracts deployed. Note: This endpoint is only available on Ethereum, Optimum, Base, and Arbitrum networks (network IDs 1, 10, 8453, and 42161).",
     "inputSchema": {
       "type": "object",
@@ -3736,7 +4232,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "fetch_token_mini_charts",
+    "name": "get_token_sparklines",
     "description": "Get a list of token simple chart data (sparklines) for the given tokens",
     "inputSchema": {
       "type": "object",
@@ -3764,7 +4260,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "retrieve_token_transactions",
+    "name": "get_token_transactions",
     "description": "Get transactions for a token pair",
     "inputSchema": {
       "type": "object",
@@ -3913,7 +4409,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "fetch_wallet_token_activity",
+    "name": "get_wallet_token_events",
     "description": "Get a list of token events for a given wallet address",
     "inputSchema": {
       "type": "object",
@@ -4021,7 +4517,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "fetch_trading_pair_metrics",
+    "name": "get_pair_stats",
     "description": "Get bucketed stats for a given token within a pair",
     "inputSchema": {
       "type": "object",
@@ -4082,7 +4578,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "fetch_multiple_pairs_metrics",
+    "name": "get_pairs_stats",
     "description": "Get bucketed stats for a given token within a list of pairs",
     "inputSchema": {
       "type": "object",
@@ -4129,7 +4625,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "search_filter_pairs",
+    "name": "filter_pairs",
     "description": "Get a list of pairs based on various filters like volume, price, liquidity, etc.",
     "inputSchema": {
       "type": "object",
@@ -4608,7 +5104,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "fetch_pair_information",
+    "name": "get_pair_info",
     "description": "Get metadata for a pair of tokens, including price, volume, and liquidity stats over various timeframes.",
     "inputSchema": {
       "type": "object",
@@ -4648,7 +5144,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "list_token_pairs",
+    "name": "get_token_pairs",
     "description": "Get a list of pairs for a token",
     "inputSchema": {
       "type": "object",
@@ -4676,7 +5172,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "fetch_token_pairs_details",
+    "name": "get_token_pairs_metadata",
     "description": "Get pairs with metadata for a specific token",
     "inputSchema": {
       "type": "object",
@@ -4704,7 +5200,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "retrieve_liquidity_information",
+    "name": "get_liquidity_info",
     "description": "Get liquidity metadata for a pair, including both unlocked and locked liquidity data",
     "inputSchema": {
       "type": "object",
@@ -4728,7 +5224,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "fetch_liquidity_lock_details",
+    "name": "get_liquidity_locks",
     "description": "Get liquidity locks for a pair, including details about locked amounts, lock duration, and owner information",
     "inputSchema": {
       "type": "object",
@@ -4756,7 +5252,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "search_exchange_platforms",
+    "name": "filter_exchanges",
     "description": "Get a list of exchanges based on various filters like volume, transactions, active users, etc.",
     "inputSchema": {
       "type": "object",
@@ -4916,22 +5412,38 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "network_exchanges_list",
+    "name": "get_network_dexes",
     "description": "Get a list of exchanges on a specific network",
     "inputSchema": {
       "type": "object",
       "properties": {
-        "showNameless": {
-          "type": "boolean",
-          "description": "Whether to show exchanges without names"
+        "networkId": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "The network ID to get exchanges for"
+        },
+        "phrase": {
+          "type": "string",
+          "description": "A phrase to search for exchange names or addresses"
+        },
+        "limit": {
+          "type": "number",
+          "description": "Maximum number of items to return"
+        },
+        "offset": {
+          "type": "number",
+          "description": "Number of items to skip"
         }
       },
+      "required": [
+        "networkId"
+      ],
       "additionalProperties": false,
       "$schema": "http://json-schema.org/draft-07/schema#"
     }
   },
   {
-    "name": "pair_chart_metadata",
+    "name": "get_pair_chart_metadata",
     "description": "Returns charting metadata for a given pair. Used for implementing a Trading View datafeed.",
     "inputSchema": {
       "type": "object",
@@ -4953,7 +5465,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "event_labels_list",
+    "name": "get_event_labels",
     "description": "Get a list of event labels that can be used to categorize events",
     "inputSchema": {
       "type": "object",
@@ -4979,7 +5491,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "wallets_search_filter",
+    "name": "filter_wallets",
     "description": "Search and filter blockchain wallets based on various criteria.",
     "inputSchema": {
       "type": "object",
@@ -5085,7 +5597,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "token_wallets_filter",
+    "name": "filter_token_wallets",
     "description": "Filter wallets that hold or trade a specific token.",
     "inputSchema": {
       "type": "object",
@@ -5137,7 +5649,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "wallet_detailed_stats",
+    "name": "get_wallet_stats",
     "description": "Get comprehensive statistics for a wallet.",
     "inputSchema": {
       "type": "object",
@@ -5167,7 +5679,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "wallet_chart_data",
+    "name": "get_wallet_chart",
     "description": "Generate chart data for wallet.",
     "inputSchema": {
       "type": "object",
@@ -5195,8 +5707,7 @@ export const supportedTools :Tool[]= [
           "additionalProperties": false
         },
         "resolution": {
-          "type": "string",
-          "description": "Available options are `1S`, `5S`, `15S`, `30S`, `1`, `5`, `15`, `30`, `60`, `240`, `720`, `1D`, `7D`."
+          "type": "string"
         },
         "walletAddress": {
           "type": "string",
@@ -5213,7 +5724,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "nft_pool_details",
+    "name": "get_nft_pool",
     "description": "Get detailed information about a specific NFT pool including pool balance, spot price, NFT assets, fees, and trading statistics. Supports AMM NFT marketplaces like Sudoswap.",
     "inputSchema": {
       "type": "object",
@@ -5237,7 +5748,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "nft_pool_events_data",
+    "name": "get_nft_pool_events",
     "description": "Get transaction events for NFT pools across all AMM NFT marketplaces. Returns detailed event data including swaps, deposits, withdrawals, price updates, and pool management activities.",
     "inputSchema": {
       "type": "object",
@@ -5320,7 +5831,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "nft_collection_pool_stats",
+    "name": "get_nft_pool_stats",
     "description": "Get aggregated pool statistics and metadata for a specific NFT collection on a given AMM NFT exchange. Returns collection-wide liquidity, volume, fees, and floor price data.",
     "inputSchema": {
       "type": "object",
@@ -5349,7 +5860,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "exchange_nft_collections",
+    "name": "get_nft_collections_by_exchange",
     "description": "Get all NFT collections that have liquidity pools on a specific AMM NFT exchange. Returns collection metadata, liquidity statistics, and trading metrics for each collection.",
     "inputSchema": {
       "type": "object",
@@ -5381,7 +5892,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "collection_exchange_pools",
+    "name": "get_nft_pools_by_collection",
     "description": "Get all liquidity pools for a specific NFT collection on a given AMM NFT exchange. Returns detailed pool information including balances, pricing, assets, and trading statistics.",
     "inputSchema": {
       "type": "object",
@@ -5418,7 +5929,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "owner_nft_pools",
+    "name": "get_nft_pools_by_owner",
     "description": "Get all NFT liquidity pools owned by a specific wallet address across AMM NFT marketplaces. Returns detailed pool information including assets, balances, and performance metrics.",
     "inputSchema": {
       "type": "object",
@@ -5454,7 +5965,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "nft_collections_search",
+    "name": "filter_nft_collections",
     "description": "Search and filter NFT collections based on various criteria including volume, floor price, trading activity, and metadata. All parameters are optional - use filters for advanced criteria.",
     "inputSchema": {
       "type": "object",
@@ -5491,7 +6002,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "nft_pool_collections_search",
+    "name": "filter_nft_pool_collections",
     "description": "Search and filter NFT collections that have liquidity pools on AMM NFT marketplaces. Returns collections with pool statistics and trading metrics. All parameters are optional.",
     "inputSchema": {
       "type": "object",
@@ -5521,7 +6032,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "nfts_search_advanced",
+    "name": "search_nfts",
     "description": "Search for NFTs across collections and marketplaces with advanced filtering options. Returns comprehensive NFT data including metadata, pricing, and trading history. All parameters are optional.",
     "inputSchema": {
       "type": "object",
@@ -5531,25 +6042,10 @@ export const supportedTools :Tool[]= [
           "description": "Whether to filter out wash trading"
         },
         "include": {
-          "anyOf": [
-            {
-              "type": "string",
-              "enum": [
-                "Asset",
-                "Collection"
-              ]
-            },
-            {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "enum": [
-                  "Asset",
-                  "Collection"
-                ]
-              }
-            }
-          ],
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
           "description": "Types of NFT data to include in search"
         },
         "limit": {
@@ -5575,7 +6071,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "nft_pools_search",
+    "name": "filter_nft_pools",
     "description": "Search and filter NFT liquidity pools based on various criteria including liquidity, volume, pool type, and performance metrics. All parameters are optional.",
     "inputSchema": {
       "type": "object",
@@ -5596,71 +6092,8 @@ export const supportedTools :Tool[]= [
           "description": "Search phrase to match pool details"
         },
         "rankings": {
-          "anyOf": [
-            {
-              "type": "object",
-              "properties": {
-                "attribute": {
-                  "type": "string",
-                  "enum": [
-                    "balanceNBT",
-                    "balanceUSD",
-                    "expenseNBT24",
-                    "expenseNBTAll",
-                    "expenseUSD24",
-                    "expenseUSDAll",
-                    "nftBalance",
-                    "nftVolume24",
-                    "nftVolumeAll",
-                    "nftsBought24",
-                    "nftsBoughtAll",
-                    "nftsSold24",
-                    "nftsSoldAll",
-                    "offerNBT",
-                    "offerUSD",
-                    "poolFeesNBT24",
-                    "poolFeesNBTAll",
-                    "poolFeesUSD24",
-                    "poolFeesUSDAll",
-                    "protocolFeesNBT24",
-                    "protocolFeesNBTAll",
-                    "protocolFeesUSD24",
-                    "protocolFeesUSDAll",
-                    "revenueNBT24",
-                    "revenueNBTAll",
-                    "revenueUSD24",
-                    "revenueUSDAll",
-                    "sellNBT",
-                    "sellUSD",
-                    "volumeNBT24",
-                    "volumeNBTAll",
-                    "volumeUSD24",
-                    "volumeUSDAll"
-                  ],
-                  "description": "The attribute to rank NFT pools by"
-                },
-                "direction": {
-                  "type": "string",
-                  "enum": [
-                    "ASC",
-                    "DESC"
-                  ],
-                  "description": "The direction to apply to the ranking attribute"
-                }
-              },
-              "required": [
-                "direction"
-              ],
-              "additionalProperties": false
-            },
-            {
-              "type": "array",
-              "items": {
-                "$ref": "#/properties/rankings/anyOf/0"
-              }
-            }
-          ],
-          "description": "Ranking criteria for sorting results - can be a single ranking or array of rankings"
+          "type": "array",
+          "description": "Ranking criteria for sorting results"
         }
       },
       "additionalProperties": false,
@@ -5668,7 +6101,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "nft_collection_assets",
+    "name": "get_nft_collection_assets",
     "description": "Get individual NFT assets from a collection with detailed metadata including attributes, media, and token-specific information. Address and networkId are required.",
     "inputSchema": {
       "type": "object",
@@ -5711,7 +6144,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "nft_collection_detailed_stats",
+    "name": "get_nft_collection_stats",
     "description": "Get bucketed statistical data for NFT collections over time including volume, price movements, and trading metrics across specified time periods. CollectionAddress and networkId are required.",
     "inputSchema": {
       "type": "object",
@@ -5725,33 +6158,17 @@ export const supportedTools :Tool[]= [
           "description": "Collection contract address (required)"
         },
         "durations": {
-          "anyOf": [
-            {
-              "type": "string",
-              "enum": [
-                "day1",
-                "day30",
-                "hour1",
-                "hour4",
-                "hour12",
-                "week1"
-              ]
-            },
-            {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "enum": [
-                  "day1",
-                  "day30",
-                  "hour1",
-                  "hour4",
-                  "hour12",
-                  "week1"
-                ]
-              }
-            }
-          ],
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "HOUR",
+              "DAY",
+              "WEEK",
+              "MONTH",
+              "YEAR"
+            ]
+          },
           "description": "Time durations for statistics"
         },
         "grouping": {
@@ -5777,7 +6194,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "nft_collection_events",
+    "name": "get_nft_collection_events",
     "description": "Get transaction events for NFT collections across marketplaces including sales, transfers, mints, and other activities. NetworkId is required, other filters are optional.",
     "inputSchema": {
       "type": "object",
@@ -5839,7 +6256,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "nft_contracts_metadata",
+    "name": "get_nft_contracts",
     "description": "Get enhanced contract information for NFT collections including metadata, social links, and labels. Provide a list of contract addresses and network IDs.",
     "inputSchema": {
       "type": "object",
@@ -5872,7 +6289,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "parallel_assets_search",
+    "name": "filter_parallel_assets",
     "description": "Search and filter Parallel trading card game assets with advanced filtering and matching criteria. Returns card metadata, game stats, and pricing information. All parameters are optional.",
     "inputSchema": {
       "type": "object",
@@ -5905,7 +6322,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "parallel_card_changes",
+    "name": "get_parallel_card_changes",
     "description": "Get changes made to Parallel trading card metadata over time including updates to stats, artwork, and game mechanics. All parameters are optional.",
     "inputSchema": {
       "type": "object",
@@ -5928,7 +6345,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "prime_pool_assets_data",
+    "name": "get_prime_pool_assets",
     "description": "Get assets in Prime ecosystem pools including liquidity pool compositions and asset details. NetworkId is required, other parameters are optional.",
     "inputSchema": {
       "type": "object",
@@ -5967,7 +6384,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "prime_pool_events_data",
+    "name": "get_prime_pool_events",
     "description": "Get transaction events for Prime ecosystem pools including liquidity changes, swaps, and pool management activities. NetworkId is required, other parameters are optional.",
     "inputSchema": {
       "type": "object",
@@ -5977,54 +6394,11 @@ export const supportedTools :Tool[]= [
           "description": "Pagination cursor"
         },
         "eventTypes": {
-          "anyOf": [
-            {
-              "type": "string",
-              "enum": [
-                "CACHE",
-                "CACHING_PAUSED",
-                "CLAIM",
-                "EMERGENCY_WITHDRAW",
-                "END_TIMESTAMP_UPDATED",
-                "ETH_REWARDS_ADDED",
-                "ETH_REWARDS_SET",
-                "LOG_POOL_ADDITION",
-                "LOG_POOL_SET_ALLOC_POINT",
-                "LOG_SET_PER_SECOND",
-                "LOG_UPDATE_POOL",
-                "POOL_DISCOVERED",
-                "REWARD_DECREASE",
-                "REWARD_INCREASE",
-                "TIME_CACHE_PERIOD_UPDATED",
-                "WITHDRAW"
-              ]
-            },
-            {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "enum": [
-                  "CACHE",
-                  "CACHING_PAUSED",
-                  "CLAIM",
-                  "EMERGENCY_WITHDRAW",
-                  "END_TIMESTAMP_UPDATED",
-                  "ETH_REWARDS_ADDED",
-                  "ETH_REWARDS_SET",
-                  "LOG_POOL_ADDITION",
-                  "LOG_POOL_SET_ALLOC_POINT",
-                  "LOG_SET_PER_SECOND",
-                  "LOG_UPDATE_POOL",
-                  "POOL_DISCOVERED",
-                  "REWARD_DECREASE",
-                  "REWARD_INCREASE",
-                  "TIME_CACHE_PERIOD_UPDATED",
-                  "WITHDRAW"
-                ]
-              }
-            }
-          ],
-          "description": "Types of events to include - can be a single event type or array of event types"
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Types of events to include"
         },
         "limit": {
           "type": "number",
@@ -6056,7 +6430,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "prime_pools_info",
+    "name": "get_prime_pools",
     "description": "Get information about Prime ecosystem pools including pool statistics, liquidity, and performance metrics. Address and networkId are required.",
     "inputSchema": {
       "type": "object",
@@ -6088,7 +6462,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "nft_collection_holders",
+    "name": "get_nft_holders",
     "description": "Get holders of a specific NFT collection ordered by holdings with detailed balance information. CollectionAddress and networkId are required.",
     "inputSchema": {
       "type": "object",
@@ -6116,7 +6490,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "wallet_nft_collections_data",
+    "name": "get_wallet_nft_collections",
     "description": "Get NFT collections held by a specific wallet including collection metadata and holding quantities. Input requires walletAddress.",
     "inputSchema": {
       "type": "object",
@@ -6148,7 +6522,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "wallet_collection_assets",
+    "name": "get_wallet_nft_assets",
     "description": "Get specific NFT assets held by a wallet from a particular collection including token metadata and ownership details. Input requires collectionId in format 'collectionAddress:networkId' and walletAddress.",
     "inputSchema": {
       "type": "object",
@@ -6185,7 +6559,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "token_lifecycle_events",
+    "name": "get_token_lifecycle_events",
     "description": "Get mint and burn events for a specific token including amounts, timestamps, and supply changes. Address and networkId are required.",
     "inputSchema": {
       "type": "object",
@@ -6227,7 +6601,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "token_top_traders_stats",
+    "name": "get_token_top_traders",
     "description": "Get the top traders for a specific token over a specified time period including trading volumes, profits, and transaction counts. TokenAddress, networkId, and tradingPeriod are required.",
     "inputSchema": {
       "type": "object",
@@ -6280,7 +6654,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "token_liquidity_metadata",
+    "name": "get_token_liquidity_metadata",
     "description": "Get liquidity metadata for all pairs of a given token",
     "inputSchema": {
       "type": "object",
@@ -6304,7 +6678,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "community_notes_data",
+    "name": "get_community_notes",
     "description": "Get community gathered notes and annotations. Returns community-contributed information and insights.",
     "inputSchema": {
       "type": "object",
@@ -6324,7 +6698,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "prime_token_holders",
+    "name": "get_prime_holders",
     "description": "Get holders of Prime tokens with detailed balance information, USD values, and token metadata. All parameters are optional.",
     "inputSchema": {
       "type": "object",
@@ -6339,7 +6713,192 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "discover_topic_influencers",
+    "name": "search_tokens",
+    "description": "Search for tokens by name, symbol, or contract address on HIVE_DATASOURCE_TWO. Returns matching tokens with price, volume, and market cap data. Uses filterTokens API with phrase search.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "phrase": {
+          "type": "string",
+          "description": "The search query to match against token name, symbol, or address"
+        },
+        "limit": {
+          "type": "number",
+          "description": "Maximum number of results to return (default: 20)"
+        },
+        "offset": {
+          "type": "number",
+          "description": "Pagination offset for results"
+        },
+        "networkFilter": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "description": "Filter results to specific network IDs (e.g., [1] for Ethereum, [56] for BSC)"
+        }
+      },
+      "required": [
+        "phrase"
+      ],
+      "additionalProperties": false,
+      "$schema": "http://json-schema.org/draft-07/schema#"
+    }
+  },
+  {
+    "name": "list_top_tokens",
+    "description": "Get a ranked list of top tokens by volume, market cap, or other metrics on HIVE_DATASOURCE_TWO. Returns tokens sorted by the specified ranking attribute.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "limit": {
+          "type": "number",
+          "description": "Maximum number of tokens to return (default: 100)"
+        },
+        "offset": {
+          "type": "number",
+          "description": "Pagination offset for results"
+        },
+        "rankingAttribute": {
+          "type": "string",
+          "description": "Attribute to rank tokens by (e.g., volume24, marketCap, change24)"
+        },
+        "rankingDirection": {
+          "type": "string",
+          "enum": [
+            "ASC",
+            "DESC"
+          ],
+          "description": "Sort direction ASC or DESC (default: DESC)"
+        }
+      },
+      "additionalProperties": false,
+      "$schema": "http://json-schema.org/draft-07/schema#"
+    }
+  },
+  {
+    "name": "get_latest_pairs",
+    "description": "Get the most recently created trading pairs across DEXs on HIVE_DATASOURCE_TWO. Ideal for discovering new token launches and monitoring launchpad activity. Pairs are sorted by creation time.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "limit": {
+          "type": "number",
+          "description": "Maximum number of pairs to return (default: 20)"
+        },
+        "offset": {
+          "type": "number",
+          "description": "Pagination offset for results"
+        },
+        "minLiquidity": {
+          "type": "number",
+          "description": "Minimum liquidity in USD to include"
+        }
+      },
+      "additionalProperties": false,
+      "$schema": "http://json-schema.org/draft-07/schema#"
+    }
+  },
+  {
+    "name": "filter_network_wallets",
+    "description": "Filter and rank wallets by realized profit, trading activity, or other metrics on HIVE_DATASOURCE_TWO. Useful for finding top traders or analyzing wallet behavior. (Requires Growth or Enterprise plan)",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "limit": {
+          "type": "number",
+          "description": "Maximum number of wallets to return (default: 20)"
+        },
+        "offset": {
+          "type": "number",
+          "description": "Pagination offset for results"
+        },
+        "rankingAttribute": {
+          "type": "string",
+          "description": "Attribute to rank wallets by (e.g., realizedProfitUsd30d, swaps1d)"
+        },
+        "rankingDirection": {
+          "type": "string",
+          "enum": [
+            "ASC",
+            "DESC"
+          ],
+          "description": "Sort direction ASC or DESC (default: DESC)"
+        },
+        "wallets": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Filter to specific wallet addresses"
+        },
+        "includeLabels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Include only wallets with these labels"
+        },
+        "excludeLabels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Exclude wallets with these labels"
+        }
+      },
+      "additionalProperties": false,
+      "$schema": "http://json-schema.org/draft-07/schema#"
+    }
+  },
+  {
+    "name": "get_detailed_stats",
+    "description": "Get comprehensive statistics for a specific trading pair on HIVE_DATASOURCE_TWO including volume, price changes, buy/sell counts, and liquidity metrics over multiple timeframes.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "networkId": {
+          "type": "number",
+          "description": "The network ID (e.g., 1 for Ethereum, 56 for BSC)"
+        },
+        "pairAddress": {
+          "type": "string",
+          "description": "The trading pair contract address"
+        },
+        "durations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Time durations for stats (e.g., day1, hour12, hour4, hour1, min5)"
+        },
+        "bucketCount": {
+          "type": "number",
+          "description": "Number of time buckets for historical data"
+        },
+        "statsType": {
+          "type": "string",
+          "description": "Statistics type (filtered or unfiltered)"
+        },
+        "tokenOfInterest": {
+          "type": "string",
+          "description": "Which token in the pair to focus on (token0 or token1)"
+        },
+        "timestamp": {
+          "type": "number",
+          "description": "Historical timestamp for stats (Unix seconds)"
+        }
+      },
+      "required": [
+        "networkId",
+        "pairAddress"
+      ],
+      "additionalProperties": false,
+      "$schema": "http://json-schema.org/draft-07/schema#"
+    }
+  },
+  {
+    "name": "get_topic_creators",
     "description": "Get the top creators for a social topic",
     "inputSchema": {
       "type": "object",
@@ -6356,7 +6915,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "fetch_topic_news_articles",
+    "name": "get_topic_news",
     "description": "Get the top news posts for a social topic. Top news is determined by the metrics related to the social posts that mention the news posts.",
     "inputSchema": {
       "type": "object",
@@ -6373,7 +6932,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "analyze_topic_social_posts",
+    "name": "get_topic_posts",
     "description": "Get the top posts for a social topic. If start time is provided the result will be the top posts by interactions for the time range. If start is not provided it will be the most recent top posts by interactions from the last 24 hours.",
     "inputSchema": {
       "type": "object",
@@ -6400,7 +6959,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "retrieve_topic_metrics",
+    "name": "get_topic_metrics",
     "description": "Get summary information for a social topic. The output is a 24 hour aggregation social activity with metrics comparing the latest 24 hours to the previous 24 hours.",
     "inputSchema": {
       "type": "object",
@@ -6417,7 +6976,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "list_trending_topics",
+    "name": "get_trending_topics",
     "description": "Get a list of trending social topics.",
     "inputSchema": {
       "type": "object",
@@ -6425,7 +6984,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "analyze_category_overview",
+    "name": "get_category_info",
     "description": "Get summary information for a social category",
     "inputSchema": {
       "type": "object",
@@ -6442,7 +7001,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "discover_category_topics",
+    "name": "get_category_topics",
     "description": "Get the top topics for a social category",
     "inputSchema": {
       "type": "object",
@@ -6459,7 +7018,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "fetch_category_social_content",
+    "name": "get_category_posts",
     "description": "Get the top posts for a social topic. If start time is provided the result will be the top posts by interactions for the time range. If start is not provided it will be the most recent top posts by interactions from the last 24 hours.",
     "inputSchema": {
       "type": "object",
@@ -6486,7 +7045,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "retrieve_category_news_feed",
+    "name": "get_category_news",
     "description": "Get the top news posts for a category. Top news is determined by the metrics related to the social posts that mention the news posts.",
     "inputSchema": {
       "type": "object",
@@ -6503,7 +7062,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "list_category_influencers",
+    "name": "get_category_creators",
     "description": "Get the top creators for a social category",
     "inputSchema": {
       "type": "object",
@@ -6520,7 +7079,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "browse_trending_categories",
+    "name": "get_categories_list",
     "description": "Get a list of trending social categories.",
     "inputSchema": {
       "type": "object",
@@ -6528,7 +7087,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "rank_social_influencers",
+    "name": "get_creators_list",
     "description": "Get a list of trending social creators over all of social based on interactions. To get lists of creators by category or topic see the topics and categories endpoints.",
     "inputSchema": {
       "type": "object",
@@ -6536,7 +7095,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "fetch_creator_profile",
+    "name": "get_creator_profile",
     "description": "Get detail information on a specific creator",
     "inputSchema": {
       "type": "object",
@@ -6559,7 +7118,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "track_creator_performance",
+    "name": "get_creator_metrics",
     "description": "Get time series data on a creator.",
     "inputSchema": {
       "type": "object",
@@ -6600,7 +7159,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "analyze_creator_content",
+    "name": "get_creator_posts",
     "description": "Get the top posts for a specific creator.",
     "inputSchema": {
       "type": "object",
@@ -6633,7 +7192,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "retrieve_post_analytics",
+    "name": "get_post_details",
     "description": "Get details of a post",
     "inputSchema": {
       "type": "object",
@@ -6656,7 +7215,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "monitor_post_engagement",
+    "name": "get_post_metrics",
     "description": "Get interactions over time for a post. If a post is older than 365 days the time series will be returned as daily interactions, otherwise it hourly interactions",
     "inputSchema": {
       "type": "object",
@@ -6679,7 +7238,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "scan_crypto_market_metrics",
+    "name": "get_crypto_market_metrics",
     "description": "Get a general snapshot of HIVE_DATASOURCE_THREE metrics on the entire list of tracked coins. This version is heavily cached and up to 1 hour behind. It is designed as a lightweight mechanism for monitoring the universe of available assets, either in aggregate or relative to each other. Metrics include Galaxy Score™, AltRank™, price, volatility, 24h percent change, market cap, social mentions, social interactions, social contributors, social dominance, and categories. Use the coins/list/v2 endpoint for data updated every few seconds.",
     "inputSchema": {
       "type": "object",
@@ -6708,7 +7267,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "analyze_coin_performance",
+    "name": "get_coin_performance",
     "description": "Get market data on a coin or token. Specify the coin to be queried by providing the numeric ID or the symbol of the coin in the input parameter, which can be found by calling the /coins/list endpoint.",
     "inputSchema": {
       "type": "object",
@@ -6725,7 +7284,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "fetch_coin_metadata",
+    "name": "get_coin_metadata",
     "description": "Get meta information for a cryptocurrency project. This includes information such as the website, social media links, and other information.",
     "inputSchema": {
       "type": "object",
@@ -6742,7 +7301,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "browse_supported_stocks",
+    "name": "get_supported_stocks",
     "description": "Lists all stocks supported by HIVE_DATASOURCE_THREE. Includes the \"topic\" endpoint to use to get social data from this asset as a social topic.",
     "inputSchema": {
       "type": "object",
@@ -6750,7 +7309,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "retrieve_stock_analytics",
+    "name": "get_stock_analytics",
     "description": "Get market data on a stock. Specify the coin to be queried by providing the numeric ID or the symbol of the coin in the input parameter, which can be found by calling the /coins/list endpoint.",
     "inputSchema": {
       "type": "object",
@@ -6767,7 +7326,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "explore_nft_collections",
+    "name": "get_nft_collections",
     "description": "Lists all nft collections supported by HIVE_DATASOURCE_THREE. Includes the \"topic\" endpoint to use to get social data from this nft collection as a social topic.",
     "inputSchema": {
       "type": "object",
@@ -6775,7 +7334,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "analyze_nft_collection",
+    "name": "get_nft_collection_analysis",
     "description": "Get market data on an nft collection. Specify the nft to be queried by providing the numeric ID or the slug of the nft in the input parameter, which can be found by calling the /public/nfts/list endpoint.",
     "inputSchema": {
       "type": "object",
@@ -6792,7 +7351,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "track_nft_market_trends",
+    "name": "get_nft_market_trends",
     "description": "Get market time series data on an nft collection. Specify the nft to be queried by providing the numeric ID or slug of the nft collection in the input parameter, which can be found by calling the /public/nfts/list endpoint.",
     "inputSchema": {
       "type": "object",
@@ -6809,7 +7368,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "monitor_system_updates",
+    "name": "get_system_changes",
     "description": "Updates to potential changes to historical time series data. Search term changes only impact the most recent 72 hours (hourly) or 3 days (daily) data. \"full historical\" is a change that may impact the full history of data. Each change provides a description of what is impacted and why.",
     "inputSchema": {
       "type": "object",
@@ -6817,7 +7376,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "exchange_markets_browser",
+    "name": "get_exchange_markets",
     "description": "Fetch all available markets/trading pairs from an exchange",
     "inputSchema": {
       "type": "object",
@@ -6834,7 +7393,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "exchange_currencies_browser",
+    "name": "get_exchange_currencies",
     "description": "Fetch all available currencies from an exchange",
     "inputSchema": {
       "type": "object",
@@ -6851,7 +7410,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "trading_pair_ticker_data",
+    "name": "get_ticker",
     "description": "Fetch ticker data (price, volume, etc.) for a specific trading pair",
     "inputSchema": {
       "type": "object",
@@ -6874,7 +7433,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "multiple_tickers_data",
+    "name": "get_tickers",
     "description": "Fetch ticker data for multiple trading pairs",
     "inputSchema": {
       "type": "object",
@@ -6902,7 +7461,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "trading_pair_orderbook_data",
+    "name": "get_orderbook",
     "description": "Fetch order book (bids and asks) for a trading pair",
     "inputSchema": {
       "type": "object",
@@ -6930,7 +7489,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "trading_pair_recent_trades",
+    "name": "get_recent_trades",
     "description": "Fetch recent trades for a trading pair",
     "inputSchema": {
       "type": "object",
@@ -6963,7 +7522,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "trading_pair_candlestick_data",
+    "name": "get_ohlcv",
     "description": "Fetch OHLCV (candlestick) data for a trading pair",
     "inputSchema": {
       "type": "object",
@@ -7002,7 +7561,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "perpetual_funding_rate_current",
+    "name": "get_funding_rate",
     "description": "Fetch current funding rate for a perpetual futures contract",
     "inputSchema": {
       "type": "object",
@@ -7025,7 +7584,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "perpetual_funding_rate_history",
+    "name": "get_funding_rate_history",
     "description": "Fetch funding rate history for perpetual futures contracts",
     "inputSchema": {
       "type": "object",
@@ -7057,7 +7616,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "multiple_pairs_best_prices",
+    "name": "get_best_bid_ask",
     "description": "Fetch best bid/ask prices for multiple trading pairs",
     "inputSchema": {
       "type": "object",
@@ -7085,7 +7644,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "exchange_system_status",
+    "name": "get_exchange_status",
     "description": "Fetch the exchange system status to check if it is operating normally",
     "inputSchema": {
       "type": "object",
@@ -7102,7 +7661,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "exchange_server_time",
+    "name": "get_exchange_time",
     "description": "Fetch the current exchange server time",
     "inputSchema": {
       "type": "object",
@@ -7119,7 +7678,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "level2_orderbook_data",
+    "name": "get_l2_orderbook",
     "description": "Fetch level 2 (aggregated) order book for faster performance",
     "inputSchema": {
       "type": "object",
@@ -7147,7 +7706,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "perpetual_funding_rates_all",
+    "name": "get_funding_rates",
     "description": "Fetch funding rates for multiple or all perpetual futures contracts",
     "inputSchema": {
       "type": "object",
@@ -7175,7 +7734,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "derivatives_index_candlestick",
+    "name": "get_index_ohlcv",
     "description": "Fetch index price OHLCV data for derivatives",
     "inputSchema": {
       "type": "object",
@@ -7214,7 +7773,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "derivatives_mark_candlestick",
+    "name": "get_mark_ohlcv",
     "description": "Fetch mark price OHLCV data for derivatives",
     "inputSchema": {
       "type": "object",
@@ -7253,7 +7812,7 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "perpetual_premium_index_data",
+    "name": "get_premium_index_ohlcv",
     "description": "Fetch premium index OHLCV data for perpetual contracts",
     "inputSchema": {
       "type": "object",
@@ -7289,6 +7848,724 @@ export const supportedTools :Tool[]= [
         "exchange",
         "symbol"
       ]
+    }
+  },
+  {
+    "name": "get_trading_fees",
+    "description": "Fetch trading fee structure (maker/taker fees) for an exchange",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "exchange": {
+          "type": "string",
+          "description": "Exchange ID (e.g., binance, coinbase, kraken)",
+          "example": "binance"
+        }
+      },
+      "required": [
+        "exchange"
+      ]
+    }
+  },
+  {
+    "name": "get_open_interest",
+    "description": "Fetch current open interest for a derivatives contract",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "exchange": {
+          "type": "string",
+          "description": "Exchange ID (e.g., binance, bybit, okx)",
+          "example": "binance"
+        },
+        "symbol": {
+          "type": "string",
+          "description": "Derivatives contract symbol (e.g., BTC/USDT:USDT)",
+          "example": "BTC/USDT:USDT"
+        }
+      },
+      "required": [
+        "exchange",
+        "symbol"
+      ]
+    }
+  },
+  {
+    "name": "get_open_interest_history",
+    "description": "Fetch historical open interest data for a derivatives contract",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "exchange": {
+          "type": "string",
+          "description": "Exchange ID (e.g., binance, bybit, okx)",
+          "example": "binance"
+        },
+        "symbol": {
+          "type": "string",
+          "description": "Derivatives contract symbol (e.g., BTC/USDT:USDT)",
+          "example": "BTC/USDT:USDT"
+        },
+        "timeframe": {
+          "type": "string",
+          "description": "Data interval (e.g., 5m, 15m, 1h, 4h, 1d)",
+          "example": "1h",
+          "default": "1h"
+        },
+        "since": {
+          "type": "number",
+          "description": "Timestamp in milliseconds to fetch data since",
+          "example": 1693958400000
+        },
+        "limit": {
+          "type": "number",
+          "description": "Number of data points to return",
+          "example": 100
+        }
+      },
+      "required": [
+        "exchange",
+        "symbol"
+      ]
+    }
+  },
+  {
+    "name": "get_long_short_ratio",
+    "description": "Fetch long/short ratio for a derivatives contract (market sentiment)",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "exchange": {
+          "type": "string",
+          "description": "Exchange ID (e.g., binance, bybit, okx)",
+          "example": "binance"
+        },
+        "symbol": {
+          "type": "string",
+          "description": "Derivatives contract symbol (e.g., BTC/USDT:USDT)",
+          "example": "BTC/USDT:USDT"
+        },
+        "timeframe": {
+          "type": "string",
+          "description": "Data interval (e.g., 5m, 15m, 1h, 4h, 1d)",
+          "example": "1h",
+          "default": "1h"
+        },
+        "since": {
+          "type": "number",
+          "description": "Timestamp in milliseconds to fetch data since",
+          "example": 1693958400000
+        },
+        "limit": {
+          "type": "number",
+          "description": "Number of data points to return",
+          "example": 24
+        }
+      },
+      "required": [
+        "exchange",
+        "symbol"
+      ]
+    }
+  },
+  {
+    "name": "get_liquidations",
+    "description": "Fetch recent liquidation events for a derivatives contract",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "exchange": {
+          "type": "string",
+          "description": "Exchange ID (e.g., binance, bybit, okx)",
+          "example": "binance"
+        },
+        "symbol": {
+          "type": "string",
+          "description": "Derivatives contract symbol (e.g., BTC/USDT:USDT)",
+          "example": "BTC/USDT:USDT"
+        },
+        "since": {
+          "type": "number",
+          "description": "Timestamp in milliseconds to fetch liquidations since",
+          "example": 1693958400000
+        },
+        "limit": {
+          "type": "number",
+          "description": "Number of liquidation events to return",
+          "example": 50
+        }
+      },
+      "required": [
+        "exchange",
+        "symbol"
+      ]
+    }
+  },
+  {
+    "name": "get_borrow_rates",
+    "description": "Fetch cross-margin borrow rates for all currencies on an exchange",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "exchange": {
+          "type": "string",
+          "description": "Exchange ID (e.g., binance, bybit, okx)",
+          "example": "binance"
+        }
+      },
+      "required": [
+        "exchange"
+      ]
+    }
+  },
+  {
+    "name": "get_leverage_tiers",
+    "description": "Fetch leverage tier information for trading pairs showing max leverage, maintenance margin rates, and notional value brackets",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "exchange": {
+          "type": "string",
+          "description": "Exchange ID (e.g., binance, bybit, okx)",
+          "example": "binance"
+        },
+        "symbol": {
+          "type": "string",
+          "description": "Trading pair symbol (e.g., BTC/USDT:USDT). Omit for all.",
+          "example": "BTC/USDT:USDT"
+        }
+      },
+      "required": [
+        "exchange"
+      ]
+    }
+  },
+  {
+    "name": "goldrush_get_cross_chain_activity",
+    "description": "Execute the goldrush_get_cross_chain_activity tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "goldrush_get_multichain_balances",
+    "description": "Execute the goldrush_get_multichain_balances tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "goldrush_get_multichain_transactions",
+    "description": "Execute the goldrush_get_multichain_transactions tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "goldrush_get_token_balances",
+    "description": "Execute the goldrush_get_token_balances tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "goldrush_get_historical_balances",
+    "description": "Execute the goldrush_get_historical_balances tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "goldrush_get_native_balance",
+    "description": "Execute the goldrush_get_native_balance tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "goldrush_get_erc20_transfers",
+    "description": "Execute the goldrush_get_erc20_transfers tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "goldrush_get_portfolio_history",
+    "description": "Execute the goldrush_get_portfolio_history tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "goldrush_get_token_holders",
+    "description": "Execute the goldrush_get_token_holders tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "goldrush_get_transaction",
+    "description": "Execute the goldrush_get_transaction tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "goldrush_get_transaction_summary",
+    "description": "Execute the goldrush_get_transaction_summary tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "goldrush_get_transactions_earliest",
+    "description": "Execute the goldrush_get_transactions_earliest tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "goldrush_get_transactions_latest",
+    "description": "Execute the goldrush_get_transactions_latest tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "goldrush_get_transactions_paginated",
+    "description": "Execute the goldrush_get_transactions_paginated tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "goldrush_get_transactions_time_buckets",
+    "description": "Execute the goldrush_get_transactions_time_buckets tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "goldrush_get_block_transactions",
+    "description": "Execute the goldrush_get_block_transactions tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "goldrush_get_block_transactions_paginated",
+    "description": "Execute the goldrush_get_block_transactions_paginated tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "goldrush_get_nft_balances",
+    "description": "Execute the goldrush_get_nft_balances tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "goldrush_check_nft_ownership",
+    "description": "Execute the goldrush_check_nft_ownership tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "goldrush_check_nft_token_ownership",
+    "description": "Execute the goldrush_check_nft_token_ownership tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "goldrush_get_token_approvals",
+    "description": "Execute the goldrush_get_token_approvals tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "goldrush_get_bitcoin_hd_balances",
+    "description": "Execute the goldrush_get_bitcoin_hd_balances tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "goldrush_get_bitcoin_balance",
+    "description": "Execute the goldrush_get_bitcoin_balance tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "goldrush_get_bitcoin_balance_history",
+    "description": "Execute the goldrush_get_bitcoin_balance_history tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "goldrush_get_bitcoin_transactions",
+    "description": "Execute the goldrush_get_bitcoin_transactions tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "goldrush_get_historical_token_prices",
+    "description": "Execute the goldrush_get_historical_token_prices tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "goldrush_get_pool_spot_prices",
+    "description": "Execute the goldrush_get_pool_spot_prices tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "goldrush_get_gas_prices",
+    "description": "Execute the goldrush_get_gas_prices tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "goldrush_get_logs",
+    "description": "Execute the goldrush_get_logs tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "goldrush_get_logs_by_topic",
+    "description": "Execute the goldrush_get_logs_by_topic tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "goldrush_get_logs_by_contract",
+    "description": "Execute the goldrush_get_logs_by_contract tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "goldrush_get_block",
+    "description": "Execute the goldrush_get_block tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "goldrush_get_block_heights",
+    "description": "Execute the goldrush_get_block_heights tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "goldrush_get_chains",
+    "description": "Execute the goldrush_get_chains tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "goldrush_get_chain_statuses",
+    "description": "Execute the goldrush_get_chain_statuses tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "goldrush_resolve_address",
+    "description": "Execute the goldrush_resolve_address tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "finnhub_get_stock_quote",
+    "description": "Execute the finnhub_get_stock_quote tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "finnhub_get_stock_candles",
+    "description": "Execute the finnhub_get_stock_candles tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "finnhub_get_company_profile",
+    "description": "Execute the finnhub_get_company_profile tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "finnhub_get_basic_financials",
+    "description": "Execute the finnhub_get_basic_financials tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "finnhub_get_stock_recommendations",
+    "description": "Execute the finnhub_get_stock_recommendations tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "finnhub_get_price_target",
+    "description": "Execute the finnhub_get_price_target tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "finnhub_search_symbol",
+    "description": "Execute the finnhub_search_symbol tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "finnhub_get_market_news",
+    "description": "Execute the finnhub_get_market_news tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "finnhub_get_forex_candles",
+    "description": "Execute the finnhub_get_forex_candles tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "finnhub_get_forex_symbols",
+    "description": "Execute the finnhub_get_forex_symbols tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "finnhub_get_forex_rates",
+    "description": "Execute the finnhub_get_forex_rates tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "finnhub_get_commodity_candles",
+    "description": "Execute the finnhub_get_commodity_candles tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "finnhub_get_insider_transactions",
+    "description": "Execute the finnhub_get_insider_transactions tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "finnhub_get_insider_sentiment",
+    "description": "Execute the finnhub_get_insider_sentiment tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "finnhub_get_company_news",
+    "description": "Execute the finnhub_get_company_news tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "finnhub_get_earnings_calendar",
+    "description": "Execute the finnhub_get_earnings_calendar tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "finnhub_get_ipo_calendar",
+    "description": "Execute the finnhub_get_ipo_calendar tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "finnhub_get_economic_calendar",
+    "description": "Execute the finnhub_get_economic_calendar tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "finnhub_get_market_status",
+    "description": "Execute the finnhub_get_market_status tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "finnhub_get_country_list",
+    "description": "Execute the finnhub_get_country_list tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "fred_get_series_observations",
+    "description": "Execute the fred_get_series_observations tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "fred_search_series",
+    "description": "Execute the fred_search_series tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "fred_get_series_info",
+    "description": "Execute the fred_get_series_info tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "fred_get_releases",
+    "description": "Execute the fred_get_releases tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "fred_get_gdp",
+    "description": "Execute the fred_get_gdp tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "fred_get_inflation",
+    "description": "Execute the fred_get_inflation tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "fred_get_fed_rate",
+    "description": "Execute the fred_get_fed_rate tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "fred_get_treasury_10y",
+    "description": "Execute the fred_get_treasury_10y tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "fred_get_unemployment",
+    "description": "Execute the fred_get_unemployment tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "fred_get_sp500",
+    "description": "Execute the fred_get_sp500 tool",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
     }
   }
 ]

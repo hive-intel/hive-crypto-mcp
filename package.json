@@ -1,6 +1,6 @@
 {
   "name": "mcp-hive",
-  "version": "0.1.0",
+  "version": "0.2.1",
   "description": "MCP server for Hive Intelligence crypto and Web3 search",
   "type": "module",
   "scripts": {
