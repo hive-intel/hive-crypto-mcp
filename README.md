@@ -39,6 +39,10 @@ Hive Intelligence MCP Server enables AI assistants to access a wide range of cry
 - **Finnhub** - Stock quotes, company profiles, forex, commodities, insider trading
 - **FRED** - 800,000+ economic time series, GDP, CPI, interest rates
 
+## Hosted deployment
+
+A hosted deployment is available on [Fronteir AI](https://fronteir.ai/mcp/hive-intel-hive-crypto-mcp).
+
 ## Installation
 
 ```bash
