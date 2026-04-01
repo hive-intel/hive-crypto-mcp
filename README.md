@@ -1,112 +1,231 @@
-# Hive Intelligence MCP Server
+# Hive Intelligence
 
-A Model Context Protocol (MCP) server providing comprehensive cryptocurrency, Web3, and financial market analytics through intelligent tool orchestration.
+MCP server and CLI for cryptocurrency, Web3, and financial market analytics. Access **351 tools** across **14 categories** from your AI assistant or terminal.
 
-## Overview
-
-Hive Intelligence MCP Server enables AI assistants to access a wide range of cryptocurrency, DeFi, Web3, equities, forex, and macroeconomic analytics through a unified MCP interface. The server provides both dynamic and category-specific access to **351 specialized tools** across **14 analytics categories**, powered by data from CoinGecko, LunarCrush, DefiLlama, GeckoTerminal, Codex, DeBank, GoPlus, GoldRush, CCXT, Finnhub, FRED, and more.
-
-### Analytics Categories
-
-| # | Category | Tools | Description |
-|---|----------|-------|-------------|
-| 1 | **Market Data & Price** | 83 | Real-time/historical prices, OHLCV, market caps, stablecoins, CEX trading data, derivatives, funding rates, options |
-| 2 | **On-Chain DEX & Pool** | 44 | DEX pools, liquidity, trending pairs, OHLCV, trader stats, volume analytics, cross-chain bridges |
-| 3 | **Portfolio & Wallet** | 38 | Wallet balances, transaction history, DeFi positions, multi-chain portfolio tracking, Bitcoin wallets |
-| 4 | **Token & Contract** | 27 | Token metadata, holder distributions, contract analysis, treasury tracking, transaction forensics |
-| 5 | **DeFi Protocol** | 23 | TVL data, protocol fees, yield farming, chain metrics, treasuries, raises, emissions |
-| 6 | **NFT Analytics** | 37 | Collection data, market charts, liquidity pools, holder analysis, cross-chain NFT tracking |
-| 7 | **Security & Risk** | 20 | Token security, honeypot detection, phishing detection, rugpull analysis, approval auditing |
-| 8 | **Network & Infrastructure** | 24 | Network health, gas prices, block data, event logs, chain statuses, address resolution |
-| 9 | **Search & Discovery** | 10 | Coin search, trending analysis, categories, token discovery, exchange listings |
-| 10 | **Social & Sentiment** | 17 | Social analytics, influencer tracking, news aggregation, Galaxy Score, AltRank |
-| 11 | **Stocks & Equities** | 8 | Real-time quotes, historical candles, company profiles, analyst recommendations |
-| 12 | **Forex & Commodities** | 4 | Forex rates, currency pair candles, commodity prices (gold, silver, platinum) |
-| 13 | **Economic Indicators** | 13 | GDP, CPI, fed rate, treasury yields, unemployment, S&P 500, FRED time series |
-| 14 | **Alternative Data** | 5 | Insider trading, sentiment scores, earnings calendar, IPO calendar |
-
-### Data Providers
-
-- **CoinGecko** - Market data, coin metadata, exchanges, NFTs, derivatives
-- **LunarCrush** - Social sentiment, Galaxy Score, AltRank, influencer tracking
-- **DefiLlama** - TVL, protocol fees, yields, stablecoins, bridges, treasuries, hacks
-- **GeckoTerminal** - On-chain DEX pools, OHLCV, trades, trending pairs
-- **Codex** - Token pairs, liquidity, trader analytics, chart data, wallet filtering
-- **DeBank** - EVM wallet portfolios, DeFi positions, protocol analytics, token info
-- **GoPlus** - Token/NFT security, honeypot detection, phishing, rugpull analysis
-- **GoldRush (Covalent)** - 100+ chain coverage, token balances, transactions, NFTs, Bitcoin
-- **CCXT** - CEX trading data, order books, OHLCV, funding rates, derivatives
-- **Finnhub** - Stock quotes, company profiles, forex, commodities, insider trading
-- **FRED** - 800,000+ economic time series, GDP, CPI, interest rates
-
-## Installation
+## Install
 
 ```bash
-# Install dependencies
-npm install
-
-# Build the server
-npm run build
-
-# Start the server
-npm start
+npm install -g hive-intelligence
 ```
 
-### MCP Client Configuration
+This gives you two commands:
 
-Add to your MCP client configuration:
+| Command | Purpose |
+|---------|---------|
+| `hive-intelligence` | MCP stdio server for AI clients (Claude Desktop, Cursor, VS Code, etc.) |
+| `hive` | CLI tool for terminal usage |
+
+## MCP Server Setup
+
+### Claude Desktop
+
+Add to your config file:
+
+- **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
+- **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
 
 ```json
 {
   "mcpServers": {
     "hive": {
       "command": "npx",
-      "args": ["-y", "mcp-hive"]
+      "args": ["-y", "hive-intelligence"]
     }
   }
 }
 ```
 
-## Usage
+### Cursor
 
-### Claude Desktop Configuration
-
-Add to your Claude Desktop configuration file:
-
-**Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
-**macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
+Add to `.cursor/mcp.json`:
 
 ```json
 {
   "mcpServers": {
-    "hive-mcp": {
+    "hive": {
       "command": "npx",
-      "args": ["-y", "mcp-hive"]
+      "args": ["-y", "hive-intelligence"]
     }
   }
 }
 ```
 
+### VS Code
+
+Add to `.vscode/mcp.json`:
+
+```json
+{
+  "servers": {
+    "hive": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "hive-intelligence"]
+    }
+  }
+}
+```
+
+### Claude Code
+
+```bash
+claude mcp add hive-intelligence -- npx -y hive-intelligence
+```
+
+### Remote MCP Server
+
+For clients that support HTTP transport:
+
+```
+https://mcp.hiveintelligence.xyz/mcp
+```
+
+More details: https://hiveintelligence.xyz/crypto-mcp
+
+## CLI Usage
+
+The `hive` CLI is a lightweight client that talks to the Hive API. No API keys needed to get started.
+
+```bash
+# Get Bitcoin price
+hive market price --ids bitcoin --vs usd
+
+# Top coins by market cap
+hive market top --vs usd --limit 10
+
+# DeFi protocol TVL
+hive defi tvl --protocol aave
+
+# Stock quote
+hive stocks quote --symbol AAPL
+
+# Search across all tools
+hive tools search "price"
+
+# Run any tool by name
+hive tools call get_price --args '{"ids": "ethereum", "vs_currencies": "usd"}'
+```
+
+### CLI Commands
+
+| Domain | Description |
+|--------|-------------|
+| `market` | Crypto prices, charts, rankings, stablecoins, gas |
+| `defi` | DeFi protocol TVL, fees, yields, bridges |
+| `portfolio` | Wallet balances, DeFi positions, NFTs |
+| `security` | Token security scans, approvals, simulations |
+| `stocks` | Stock quotes, candles, financials, analyst ratings |
+| `macro` | GDP, CPI, rates, employment, economic calendar |
+| `social` | Sentiment, influencers, trending topics |
+| `exchange` | CEX tickers, orderbooks, trades, funding rates |
+| `dex` | DEX pools, trending pairs, trades, volume |
+| `wallet` | On-chain balances, transfers, transactions |
+| `nft` | NFT collections, markets, trends |
+| `network` | Chains, gas prices, blocks |
+| `search` | Search tokens and pools |
+| `altdata` | Insider trades, earnings, IPOs |
+
+### CLI Options
+
+```
+--json          Force JSON output
+--pretty        Force human-readable output
+--fields <list> Comma-separated fields to include
+--jq <expr>     Filter JSON output (jq-like syntax)
+--csv           Output as CSV
+--timeout <ms>  Request timeout (default: 30000)
+--no-retry      Disable automatic retry
+-q, --quiet     Suppress non-data output
+-v, --verbose   Show debug info
+```
+
+### Authentication and Profiles
+
+```bash
+# Log in with API key
+hive auth login
+
+# Check connectivity
+hive doctor
+
+# Show current profile
+hive auth whoami
+
+# Manage multiple profiles
+hive auth profiles
+hive auth switch production
+```
+
+### Shell Completion
+
+```bash
+# Bash
+eval "$(hive completion bash)"
+
+# Zsh
+eval "$(hive completion zsh)"
+
+# Fish
+hive completion fish > ~/.config/fish/completions/hive.fish
+
+# Auto-install
+hive completion bash --install
+```
+
+### Aliases
+
+```bash
+hive alias set btc 'market price --ids bitcoin --vs usd'
+hive btc
+```
+
+## Analytics Categories (351 Tools)
+
+| # | Category | Tools | Description |
+|---|----------|-------|-------------|
+| 1 | Market Data & Price | 83 | Real-time/historical prices, OHLCV, market caps, stablecoins, derivatives, funding rates |
+| 2 | On-Chain DEX & Pool | 44 | DEX pools, liquidity, trending pairs, trader stats, volume, bridges |
+| 3 | Portfolio & Wallet | 38 | Wallet balances, transaction history, DeFi positions, multi-chain tracking |
+| 4 | Token & Contract | 27 | Token metadata, holder distributions, contract analysis, treasury tracking |
+| 5 | DeFi Protocol | 23 | TVL data, protocol fees, yield farming, chain metrics, treasuries |
+| 6 | NFT Analytics | 37 | Collection data, market charts, liquidity pools, holder analysis |
+| 7 | Security & Risk | 20 | Token security, honeypot detection, phishing, rugpull analysis |
+| 8 | Network & Infrastructure | 24 | Network health, gas prices, block data, chain statuses |
+| 9 | Search & Discovery | 10 | Coin search, trending analysis, categories, token discovery |
+| 10 | Social & Sentiment | 17 | Social analytics, influencer tracking, news, Galaxy Score, AltRank |
+| 11 | Stocks & Equities | 8 | Real-time quotes, candles, company profiles, recommendations |
+| 12 | Forex & Commodities | 4 | Forex rates, commodity prices (gold, silver, platinum) |
+| 13 | Economic Indicators | 13 | GDP, CPI, fed rate, treasury yields, unemployment, S&P 500 |
+| 14 | Alternative Data | 5 | Insider trading, sentiment scores, earnings/IPO calendar |
+
+## Data Providers
+
+CoinGecko, LunarCrush, DefiLlama, GeckoTerminal, Codex, DeBank, GoPlus, GoldRush (Covalent), CCXT, Finnhub, FRED
+
+## Environment Variables
+
+| Variable | Description |
+|----------|-------------|
+| `HIVE_API_KEY` | API key (or use `hive auth login`) |
+| `HIVE_API_URL` | Custom server URL (default: `https://mcp.hiveintelligence.xyz`) |
+| `API_EXECUTE_ENDPOINT` | Override MCP server backend URL |
+
 ## Development
 
-### Building
-
 ```bash
-# Development build
+# Install dependencies
+npm install
+
+# Build
 npm run build
 
-# Production build with executable permissions
-npm run prepare
-```
-
-### Testing
-
-```bash
-# Use MCP inspector for testing
+# Test with MCP inspector
 npm run inspector
-```
----
 
-## Remote MCP Server
-Checkout the guide to use Hive's remote MCP server:
-https://hiveintelligence.xyz/crypto-mcp
+# Start MCP server locally
+npm start
+```
+
+## License
+
+MIT
