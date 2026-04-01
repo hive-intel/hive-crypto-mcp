@@ -1,24 +1,46 @@
 {
-  "name": "mcp-hive",
-  "version": "0.2.1",
-  "description": "MCP server for Hive Intelligence crypto and Web3 search",
+  "name": "hive-intelligence",
+  "version": "0.3.0",
+  "description": "MCP server and CLI for Hive Intelligence — crypto, DeFi, stocks, forex, and macro data",
   "type": "module",
   "scripts": {
-    "build": "tsup && node -e \"require('fs').chmodSync('build/server.js', '755')\"",
+    "build": "tsup && chmod 755 build/server.js build/cli.js",
     "prepare": "npm run build",
     "prepublishOnly": "npm run build",
-    "inspector": "npx @modelcontextprotocol/inspector node build/index.js",
+    "inspector": "npx @modelcontextprotocol/inspector node build/server.js",
     "start": "node build/server.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "crypto",
+    "defi",
+    "blockchain",
+    "stocks",
+    "forex",
+    "financial-data",
+    "ai-tools",
+    "cli"
+  ],
+  "author": "Hive Intelligence",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hive-intel/hive-crypto-mcp"
+  },
+  "homepage": "https://hiveintelligence.xyz",
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "dependencies": {
     "@cloudflare/cabidela": "^0.2.4",
     "@modelcontextprotocol/sdk": "1.13.0",
+    "commander": "^14.0.3",
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "fastest-levenshtein": "^1.0.16",
+    "ora": "8"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
@@ -30,9 +52,11 @@
     "winston": "^3.11.0"
   },
   "bin": {
-    "hive-mcp": "./build/server.js"
+    "hive-intelligence": "./build/server.js",
+    "hive": "./bin/hive.js"
   },
   "files": [
+    "bin/**/*",
     "build/**/*",
     "README.md",
     "LICENSE"
