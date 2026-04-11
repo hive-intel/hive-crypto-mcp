@@ -422,38 +422,6 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "get_coin_ohlc_range",
-    "description": "This endpoint allows you to **get the OHLC chart (Open, High, Low, Close) of a coin within a range of timestamp based on particular coin ID**",
-    "inputSchema": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "from": {
-          "type": "number",
-          "description": "starting date in UNIX timestamp"
-        },
-        "interval": {
-          "type": "string",
-          "description": "data interval",
-          "enum": [
-            "daily",
-            "hourly"
-          ]
-        },
-        "to": {
-          "type": "number",
-          "description": "ending date in UNIX timestamp"
-        },
-        "vs_currency": {
-          "type": "string",
-          "description": "target currency of price data <br> *refers to [`/simple/supported_vs_currencies`](/reference/simple-supported-currencies)."
-        }
-      }
-    }
-  },
-  {
     "name": "get_global_stats",
     "description": "This endpoint allows you **query cryptocurrency global data including active cryptocurrencies, markets, total crypto market cap and etc**",
     "inputSchema": {
@@ -1968,40 +1936,8 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "get_circulating_supply_chart",
-    "description": "Execute the get_circulating_supply_chart tool",
-    "inputSchema": {
-      "type": "object",
-      "properties": {}
-    }
-  },
-  {
-    "name": "get_circulating_supply_chart_range",
-    "description": "Execute the get_circulating_supply_chart_range tool",
-    "inputSchema": {
-      "type": "object",
-      "properties": {}
-    }
-  },
-  {
     "name": "get_coin_ohlc",
     "description": "Execute the get_coin_ohlc tool",
-    "inputSchema": {
-      "type": "object",
-      "properties": {}
-    }
-  },
-  {
-    "name": "get_total_supply_chart",
-    "description": "Execute the get_total_supply_chart tool",
-    "inputSchema": {
-      "type": "object",
-      "properties": {}
-    }
-  },
-  {
-    "name": "get_total_supply_chart_range",
-    "description": "Execute the get_total_supply_chart_range tool",
     "inputSchema": {
       "type": "object",
       "properties": {}
@@ -2034,22 +1970,6 @@ export const supportedTools :Tool[]= [
   {
     "name": "get_treasury_transaction_history",
     "description": "Execute the get_treasury_transaction_history tool",
-    "inputSchema": {
-      "type": "object",
-      "properties": {}
-    }
-  },
-  {
-    "name": "get_token_lists",
-    "description": "Execute the get_token_lists tool",
-    "inputSchema": {
-      "type": "object",
-      "properties": {}
-    }
-  },
-  {
-    "name": "get_onchain_token_top_traders",
-    "description": "Execute the get_onchain_token_top_traders tool",
     "inputSchema": {
       "type": "object",
       "properties": {}
@@ -2183,22 +2103,6 @@ export const supportedTools :Tool[]= [
           "default": 200
         }
       }
-    }
-  },
-  {
-    "name": "get_yield_pool",
-    "description": "Get detailed information about a specific yield pool",
-    "inputSchema": {
-      "type": "object",
-      "properties": {
-        "poolId": {
-          "type": "string",
-          "description": "Pool identifier (get from yield pools list)"
-        }
-      },
-      "required": [
-        "poolId"
-      ]
     }
   },
   {
@@ -2591,435 +2495,6 @@ export const supportedTools :Tool[]= [
   {
     "name": "get_defi_entities",
     "description": "Get list of DeFi entities (companies/organizations) with their associated protocols and combined TVL.",
-    "inputSchema": {
-      "type": "object",
-      "properties": {}
-    }
-  },
-  {
-    "name": "get_wallet_history",
-    "description": "Get transaction history for a user address",
-    "inputSchema": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "User address (Single wallet address only)",
-          "example": "0x1234..."
-        },
-        "chain_id": {
-          "type": "string",
-          "description": "Chain ID (e.g., eth, bsc, xdai)",
-          "example": "eth"
-        },
-        "token_id": {
-          "type": "string",
-          "description": "Token ID to filter history (optional)",
-          "example": "0x55d3..."
-        },
-        "start_time": {
-          "type": "number",
-          "description": "Timestamp, return history earlier than this time (optional)",
-          "example": 1693958400
-        },
-        "page_count": {
-          "type": "number",
-          "description": "Number of entries to return (max 20)",
-          "example": 10
-        }
-      },
-      "required": [
-        "id",
-        "chain_id"
-      ]
-    }
-  },
-  {
-    "name": "get_wallet_balance",
-    "description": "Get net assets on multiple chains or single chain",
-    "inputSchema": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "User address (Single wallet address only)",
-          "example": "0x1234..."
-        },
-        "chain_id": {
-          "type": "string",
-          "description": "Chain ID",
-          "example": "eth"
-        },
-        "is_all": {
-          "type": "boolean",
-          "description": "If true, all tokens are returned",
-          "default": true
-        }
-      },
-      "required": [
-        "id",
-        "chain_id"
-      ]
-    }
-  },
-  {
-    "name": "get_wallet_token_balances",
-    "description": "Get token balances on all supported chains",
-    "inputSchema": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "User address (Single wallet address only)",
-          "example": "0x1234..."
-        },
-        "is_all": {
-          "type": "boolean",
-          "description": "If true, all tokens are returned",
-          "default": true
-        },
-        "chain_ids": {
-          "type": "string",
-          "description": "Comma-separated list of chain IDs",
-          "example": "eth,bsc,xdai"
-        }
-      },
-      "required": [
-        "id"
-      ]
-    }
-  },
-  {
-    "name": "get_wallet_protocol_positions",
-    "description": "Get user positions in a protocol",
-    "inputSchema": {
-      "type": "object",
-      "properties": {
-        "protocol_id": {
-          "type": "string",
-          "description": "Protocol ID (e.g., bsc_pancakeswap, curve, uniswap)",
-          "example": "uniswap"
-        },
-        "id": {
-          "type": "string",
-          "description": "User address (Single wallet address only)",
-          "example": "0x1234..."
-        }
-      },
-      "required": [
-        "protocol_id",
-        "id"
-      ]
-    }
-  },
-  {
-    "name": "get_wallet_defi_positions",
-    "description": "Get user portfolios on a chain in protocol",
-    "inputSchema": {
-      "type": "object",
-      "properties": {
-        "chain_id": {
-          "type": "string",
-          "description": "Chain ID (e.g., eth, bsc, xdai)",
-          "example": "eth"
-        },
-        "id": {
-          "type": "string",
-          "description": "User address (Single wallet address only)",
-          "example": "0x1234..."
-        }
-      },
-      "required": [
-        "chain_id",
-        "id"
-      ]
-    }
-  },
-  {
-    "name": "get_wallet_defi_positions_all_chains",
-    "description": "Get user portfolios on all supported chains",
-    "inputSchema": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "User address (Single wallet address only)",
-          "example": "0x1234..."
-        },
-        "chain_ids": {
-          "type": "string",
-          "description": "List of chain IDs",
-          "example": "eth,bsc,xdai"
-        }
-      },
-      "required": [
-        "id"
-      ]
-    }
-  },
-  {
-    "name": "get_wallet_nfts",
-    "description": "Get user NFT list for a specific chain",
-    "inputSchema": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "User address (Single wallet address only)",
-          "example": "0x1234..."
-        },
-        "chain_id": {
-          "type": "string",
-          "description": "Chain ID",
-          "example": "eth"
-        },
-        "is_all": {
-          "type": "boolean",
-          "description": "If false, only verified collections are returned",
-          "default": true
-        }
-      },
-      "required": [
-        "id",
-        "chain_id"
-      ]
-    }
-  },
-  {
-    "name": "get_wallet_all_nfts",
-    "description": "Get user NFT list across all chains",
-    "inputSchema": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "User address (Single wallet address only)",
-          "example": "0x1234..."
-        },
-        "is_all": {
-          "type": "boolean",
-          "description": "If true, all tokens are returned",
-          "default": true
-        },
-        "chain_ids": {
-          "type": "string",
-          "description": "List of chain IDs",
-          "example": "eth,bsc,xdai"
-        }
-      },
-      "required": [
-        "id"
-      ]
-    }
-  },
-  {
-    "name": "explain_transaction",
-    "description": "Get detailed explanation of a transaction",
-    "inputSchema": {
-      "type": "object",
-      "properties": {
-        "tx_id": {
-          "type": "string",
-          "description": "Transaction hash",
-          "example": "0xabc123..."
-        }
-      },
-      "required": [
-        "tx_id"
-      ]
-    }
-  },
-  {
-    "name": "get_gas_prices",
-    "description": "Get gas prices for a specific chain",
-    "inputSchema": {
-      "type": "object",
-      "properties": {
-        "chain_id": {
-          "type": "string",
-          "description": "Chain ID (e.g., eth, bsc, xdai)",
-          "example": "eth"
-        }
-      },
-      "required": [
-        "chain_id"
-      ]
-    }
-  },
-  {
-    "name": "get_nft_collection",
-    "description": "Get NFT list of a specific collection",
-    "inputSchema": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "Contract address of NFT",
-          "example": "0x1234..."
-        },
-        "chain_id": {
-          "type": "string",
-          "description": "Chain ID",
-          "example": "eth"
-        },
-        "start": {
-          "type": "integer",
-          "description": "Offset, default 0, max 100000",
-          "default": 0
-        },
-        "limit": {
-          "type": "integer",
-          "description": "Limit size, default 20, max 100",
-          "default": 20
-        }
-      },
-      "required": [
-        "id",
-        "chain_id"
-      ]
-    }
-  },
-  {
-    "name": "get_protocol_info",
-    "description": "Get detailed information about a protocol",
-    "inputSchema": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "Protocol ID (e.g., bsc_pancakeswap, curve, uniswap)",
-          "example": "uniswap"
-        }
-      },
-      "required": [
-        "id"
-      ]
-    }
-  },
-  {
-    "name": "get_protocols",
-    "description": "Get list of protocols on a chain",
-    "inputSchema": {
-      "type": "object",
-      "properties": {
-        "chain_id": {
-          "type": "string",
-          "description": "Chain ID (e.g., eth, bsc, xdai)",
-          "example": "eth"
-        }
-      },
-      "required": [
-        "chain_id"
-      ]
-    }
-  },
-  {
-    "name": "get_supported_chains",
-    "description": "Get list of all blockchain chains supported by DeBank, including chain IDs, names, and native tokens.",
-    "inputSchema": {
-      "type": "object",
-      "properties": {}
-    }
-  },
-  {
-    "name": "get_chain_details",
-    "description": "Get detailed information about a specific blockchain chain including name, native token, explorer URL, and wrapped token address.",
-    "inputSchema": {
-      "type": "object",
-      "properties": {}
-    }
-  },
-  {
-    "name": "get_debank_token_info",
-    "description": "Get detailed token information including price, symbol, decimals, and protocol association on a specific chain.",
-    "inputSchema": {
-      "type": "object",
-      "properties": {}
-    }
-  },
-  {
-    "name": "get_tokens_by_ids",
-    "description": "Get information for multiple tokens at once by providing a list of token IDs on a specific chain.",
-    "inputSchema": {
-      "type": "object",
-      "properties": {}
-    }
-  },
-  {
-    "name": "get_debank_token_price_history",
-    "description": "Get historical price data for a token on a specific chain over a given time range.",
-    "inputSchema": {
-      "type": "object",
-      "properties": {}
-    }
-  },
-  {
-    "name": "get_wallet_active_chains",
-    "description": "Get list of chains where a wallet address has had activity or holds assets.",
-    "inputSchema": {
-      "type": "object",
-      "properties": {}
-    }
-  },
-  {
-    "name": "get_wallet_token_approvals",
-    "description": "Get list of token approvals (allowances) granted by a wallet address, useful for security auditing.",
-    "inputSchema": {
-      "type": "object",
-      "properties": {}
-    }
-  },
-  {
-    "name": "simulate_transaction",
-    "description": "Simulate a transaction before execution to preview balance changes, gas costs, and potential risks.",
-    "inputSchema": {
-      "type": "object",
-      "properties": {}
-    }
-  },
-  {
-    "name": "get_debank_top_holders",
-    "description": "Get top holders of a specific token including their balances and percentage of total supply.",
-    "inputSchema": {
-      "type": "object",
-      "properties": {}
-    }
-  },
-  {
-    "name": "get_wallet_nft_approvals",
-    "description": "Get list of NFT approvals granted by a wallet address, useful for security auditing of NFT permissions.",
-    "inputSchema": {
-      "type": "object",
-      "properties": {}
-    }
-  },
-  {
-    "name": "get_wallet_chain_balance",
-    "description": "Get wallet balance on a specific chain including USD value of all token holdings.",
-    "inputSchema": {
-      "type": "object",
-      "properties": {}
-    }
-  },
-  {
-    "name": "get_portfolio_history",
-    "description": "Get historical portfolio value curve across all chains for a wallet address over time.",
-    "inputSchema": {
-      "type": "object",
-      "properties": {}
-    }
-  },
-  {
-    "name": "get_chain_portfolio_history",
-    "description": "Get historical portfolio value curve for a specific chain for a wallet address over time.",
-    "inputSchema": {
-      "type": "object",
-      "properties": {}
-    }
-  },
-  {
-    "name": "get_all_chain_history",
-    "description": "Get transaction history across all chains for a wallet address with token transfer details.",
     "inputSchema": {
       "type": "object",
       "properties": {}
@@ -6898,484 +6373,6 @@ export const supportedTools :Tool[]= [
     }
   },
   {
-    "name": "get_topic_creators",
-    "description": "Get the top creators for a social topic",
-    "inputSchema": {
-      "type": "object",
-      "properties": {
-        "topic": {
-          "type": "string",
-          "description": "The cryptocurrency symbol or topic to get creators for (e.g., BTC, ETH, DOGE)",
-          "example": "BTC"
-        }
-      },
-      "required": [
-        "topic"
-      ]
-    }
-  },
-  {
-    "name": "get_topic_news",
-    "description": "Get the top news posts for a social topic. Top news is determined by the metrics related to the social posts that mention the news posts.",
-    "inputSchema": {
-      "type": "object",
-      "properties": {
-        "topic": {
-          "type": "string",
-          "description": "The cryptocurrency symbol or topic to get news for (e.g., BTC, ETH, DOGE)",
-          "example": "BTC"
-        }
-      },
-      "required": [
-        "topic"
-      ]
-    }
-  },
-  {
-    "name": "get_topic_posts",
-    "description": "Get the top posts for a social topic. If start time is provided the result will be the top posts by interactions for the time range. If start is not provided it will be the most recent top posts by interactions from the last 24 hours.",
-    "inputSchema": {
-      "type": "object",
-      "properties": {
-        "topic": {
-          "type": "string",
-          "description": "The cryptocurrency symbol or topic to get posts for (e.g., BTC, ETH, DOGE)",
-          "example": "BTC"
-        },
-        "start": {
-          "type": "string",
-          "description": "Start timestamp (Unix timestamp in seconds)",
-          "example": "1640995200"
-        },
-        "end": {
-          "type": "string",
-          "description": "End timestamp (Unix timestamp in seconds)",
-          "example": "1641081600"
-        }
-      },
-      "required": [
-        "topic"
-      ]
-    }
-  },
-  {
-    "name": "get_topic_metrics",
-    "description": "Get summary information for a social topic. The output is a 24 hour aggregation social activity with metrics comparing the latest 24 hours to the previous 24 hours.",
-    "inputSchema": {
-      "type": "object",
-      "properties": {
-        "topic": {
-          "type": "string",
-          "description": "The cryptocurrency symbol or topic to get information for (e.g., BTC, ETH, DOGE)",
-          "example": "BTC"
-        }
-      },
-      "required": [
-        "topic"
-      ]
-    }
-  },
-  {
-    "name": "get_trending_topics",
-    "description": "Get a list of trending social topics.",
-    "inputSchema": {
-      "type": "object",
-      "properties": {}
-    }
-  },
-  {
-    "name": "get_category_info",
-    "description": "Get summary information for a social category",
-    "inputSchema": {
-      "type": "object",
-      "properties": {
-        "category": {
-          "type": "string",
-          "description": "The category to get information for",
-          "example": "DeFi"
-        }
-      },
-      "required": [
-        "category"
-      ]
-    }
-  },
-  {
-    "name": "get_category_topics",
-    "description": "Get the top topics for a social category",
-    "inputSchema": {
-      "type": "object",
-      "properties": {
-        "category": {
-          "type": "string",
-          "description": "The category to get topics for",
-          "example": "DeFi"
-        }
-      },
-      "required": [
-        "category"
-      ]
-    }
-  },
-  {
-    "name": "get_category_posts",
-    "description": "Get the top posts for a social topic. If start time is provided the result will be the top posts by interactions for the time range. If start is not provided it will be the most recent top posts by interactions from the last 24 hours.",
-    "inputSchema": {
-      "type": "object",
-      "properties": {
-        "category": {
-          "type": "string",
-          "description": "The category to get posts for",
-          "example": "DeFi"
-        },
-        "start": {
-          "type": "string",
-          "description": "Start timestamp (Unix timestamp in seconds)",
-          "example": "1640995200"
-        },
-        "end": {
-          "type": "string",
-          "description": "End timestamp (Unix timestamp in seconds)",
-          "example": "1641081600"
-        }
-      },
-      "required": [
-        "category"
-      ]
-    }
-  },
-  {
-    "name": "get_category_news",
-    "description": "Get the top news posts for a category. Top news is determined by the metrics related to the social posts that mention the news posts.",
-    "inputSchema": {
-      "type": "object",
-      "properties": {
-        "category": {
-          "type": "string",
-          "description": "The category to get news for",
-          "example": "DeFi"
-        }
-      },
-      "required": [
-        "category"
-      ]
-    }
-  },
-  {
-    "name": "get_category_creators",
-    "description": "Get the top creators for a social category",
-    "inputSchema": {
-      "type": "object",
-      "properties": {
-        "category": {
-          "type": "string",
-          "description": "The category to get creators for",
-          "example": "DeFi"
-        }
-      },
-      "required": [
-        "category"
-      ]
-    }
-  },
-  {
-    "name": "get_categories_list",
-    "description": "Get a list of trending social categories.",
-    "inputSchema": {
-      "type": "object",
-      "properties": {}
-    }
-  },
-  {
-    "name": "get_creators_list",
-    "description": "Get a list of trending social creators over all of social based on interactions. To get lists of creators by category or topic see the topics and categories endpoints.",
-    "inputSchema": {
-      "type": "object",
-      "properties": {}
-    }
-  },
-  {
-    "name": "get_creator_profile",
-    "description": "Get detail information on a specific creator",
-    "inputSchema": {
-      "type": "object",
-      "properties": {
-        "network": {
-          "type": "string",
-          "description": "The social network (e.g., twitter, youtube)",
-          "example": "twitter"
-        },
-        "id": {
-          "type": "string",
-          "description": "The creator ID on the network",
-          "example": "elonmusk"
-        }
-      },
-      "required": [
-        "network",
-        "id"
-      ]
-    }
-  },
-  {
-    "name": "get_creator_metrics",
-    "description": "Get time series data on a creator.",
-    "inputSchema": {
-      "type": "object",
-      "properties": {
-        "network": {
-          "type": "string",
-          "description": "The social network (e.g., twitter, youtube)",
-          "example": "twitter"
-        },
-        "id": {
-          "type": "string",
-          "description": "The creator ID on the network",
-          "example": "elonmusk"
-        },
-        "bucket": {
-          "type": "string",
-          "description": "Time bucket for data aggregation"
-        },
-        "interval": {
-          "type": "string",
-          "description": "Time interval for the data points"
-        },
-        "start": {
-          "type": "string",
-          "description": "Start timestamp (Unix timestamp in seconds)",
-          "example": "1640995200"
-        },
-        "end": {
-          "type": "string",
-          "description": "End timestamp (Unix timestamp in seconds)",
-          "example": "1641081600"
-        }
-      },
-      "required": [
-        "network",
-        "id"
-      ]
-    }
-  },
-  {
-    "name": "get_creator_posts",
-    "description": "Get the top posts for a specific creator.",
-    "inputSchema": {
-      "type": "object",
-      "properties": {
-        "network": {
-          "type": "string",
-          "description": "The social network (e.g., twitter, youtube)",
-          "example": "twitter"
-        },
-        "id": {
-          "type": "string",
-          "description": "The creator ID on the network",
-          "example": "elonmusk"
-        },
-        "start": {
-          "type": "string",
-          "description": "Start timestamp (Unix timestamp in seconds)",
-          "example": "1640995200"
-        },
-        "end": {
-          "type": "string",
-          "description": "End timestamp (Unix timestamp in seconds)",
-          "example": "1641081600"
-        }
-      },
-      "required": [
-        "network",
-        "id"
-      ]
-    }
-  },
-  {
-    "name": "get_post_details",
-    "description": "Get details of a post",
-    "inputSchema": {
-      "type": "object",
-      "properties": {
-        "post_type": {
-          "type": "string",
-          "description": "The type of post (e.g., twitter, youtube)",
-          "example": "twitter"
-        },
-        "post_id": {
-          "type": "string",
-          "description": "The ID of the post",
-          "example": "1234567890"
-        }
-      },
-      "required": [
-        "post_type",
-        "post_id"
-      ]
-    }
-  },
-  {
-    "name": "get_post_metrics",
-    "description": "Get interactions over time for a post. If a post is older than 365 days the time series will be returned as daily interactions, otherwise it hourly interactions",
-    "inputSchema": {
-      "type": "object",
-      "properties": {
-        "post_type": {
-          "type": "string",
-          "description": "The type of post (e.g., twitter, youtube)",
-          "example": "twitter"
-        },
-        "post_id": {
-          "type": "string",
-          "description": "The ID of the post",
-          "example": "1234567890"
-        }
-      },
-      "required": [
-        "post_type",
-        "post_id"
-      ]
-    }
-  },
-  {
-    "name": "get_crypto_market_metrics",
-    "description": "Get a general snapshot of HIVE_DATASOURCE_THREE metrics on the entire list of tracked coins. This version is heavily cached and up to 1 hour behind. It is designed as a lightweight mechanism for monitoring the universe of available assets, either in aggregate or relative to each other. Metrics include Galaxy Score™, AltRank™, price, volatility, 24h percent change, market cap, social mentions, social interactions, social contributors, social dominance, and categories. Use the coins/list/v2 endpoint for data updated every few seconds.",
-    "inputSchema": {
-      "type": "object",
-      "properties": {
-        "sort": {
-          "type": "string",
-          "description": "Sort field for the results"
-        },
-        "filter": {
-          "type": "string",
-          "description": "Filter criteria for the results"
-        },
-        "limit": {
-          "type": "number",
-          "description": "Number of results to return"
-        },
-        "desc": {
-          "type": "boolean",
-          "description": "Sort in descending order"
-        },
-        "page": {
-          "type": "string",
-          "description": "Page number for pagination"
-        }
-      }
-    }
-  },
-  {
-    "name": "get_coin_performance",
-    "description": "Get market data on a coin or token. Specify the coin to be queried by providing the numeric ID or the symbol of the coin in the input parameter, which can be found by calling the /coins/list endpoint.",
-    "inputSchema": {
-      "type": "object",
-      "properties": {
-        "coin": {
-          "type": "string",
-          "description": "The coin symbol or ID to get details for (e.g., BTC, ETH)",
-          "example": "BTC"
-        }
-      },
-      "required": [
-        "coin"
-      ]
-    }
-  },
-  {
-    "name": "get_coin_metadata",
-    "description": "Get meta information for a cryptocurrency project. This includes information such as the website, social media links, and other information.",
-    "inputSchema": {
-      "type": "object",
-      "properties": {
-        "coin": {
-          "type": "string",
-          "description": "The coin symbol or ID to get meta information for (e.g., BTC, ETH)",
-          "example": "BTC"
-        }
-      },
-      "required": [
-        "coin"
-      ]
-    }
-  },
-  {
-    "name": "get_supported_stocks",
-    "description": "Lists all stocks supported by HIVE_DATASOURCE_THREE. Includes the \"topic\" endpoint to use to get social data from this asset as a social topic.",
-    "inputSchema": {
-      "type": "object",
-      "properties": {}
-    }
-  },
-  {
-    "name": "get_stock_analytics",
-    "description": "Get market data on a stock. Specify the coin to be queried by providing the numeric ID or the symbol of the coin in the input parameter, which can be found by calling the /coins/list endpoint.",
-    "inputSchema": {
-      "type": "object",
-      "properties": {
-        "stock": {
-          "type": "string",
-          "description": "The stock symbol or ID to get details for (e.g., AAPL, TSLA)",
-          "example": "AAPL"
-        }
-      },
-      "required": [
-        "stock"
-      ]
-    }
-  },
-  {
-    "name": "get_nft_collections",
-    "description": "Lists all nft collections supported by HIVE_DATASOURCE_THREE. Includes the \"topic\" endpoint to use to get social data from this nft collection as a social topic.",
-    "inputSchema": {
-      "type": "object",
-      "properties": {}
-    }
-  },
-  {
-    "name": "get_nft_collection_analysis",
-    "description": "Get market data on an nft collection. Specify the nft to be queried by providing the numeric ID or the slug of the nft in the input parameter, which can be found by calling the /public/nfts/list endpoint.",
-    "inputSchema": {
-      "type": "object",
-      "properties": {
-        "nft": {
-          "type": "string",
-          "description": "The NFT collection slug or ID to get details for",
-          "example": "cryptopunks"
-        }
-      },
-      "required": [
-        "nft"
-      ]
-    }
-  },
-  {
-    "name": "get_nft_market_trends",
-    "description": "Get market time series data on an nft collection. Specify the nft to be queried by providing the numeric ID or slug of the nft collection in the input parameter, which can be found by calling the /public/nfts/list endpoint.",
-    "inputSchema": {
-      "type": "object",
-      "properties": {
-        "nft": {
-          "type": "string",
-          "description": "The NFT collection slug or ID to get time series data for",
-          "example": "cryptopunks"
-        }
-      },
-      "required": [
-        "nft"
-      ]
-    }
-  },
-  {
-    "name": "get_system_changes",
-    "description": "Updates to potential changes to historical time series data. Search term changes only impact the most recent 72 hours (hourly) or 3 days (daily) data. \"full historical\" is a change that may impact the full history of data. Each change provides a description of what is impacted and why.",
-    "inputSchema": {
-      "type": "object",
-      "properties": {}
-    }
-  },
-  {
     "name": "get_exchange_markets",
     "description": "Fetch all available markets/trading pairs from an exchange",
     "inputSchema": {
@@ -8487,82 +7484,875 @@ export const supportedTools :Tool[]= [
       "type": "object",
       "properties": {}
     }
-  },
+  }
+,
   {
-    "name": "fred_get_series_observations",
-    "description": "Execute the fred_get_series_observations tool",
+    "name": "goldrush_get_xyk_pools",
+    "description": "Get all XY=K (AMM DEX) pools for a chain using GoldRush (Covalent). Returns pool addresses, token pairs, reserves, and liquidity data.",
     "inputSchema": {
       "type": "object",
       "properties": {}
     }
   },
   {
-    "name": "fred_search_series",
-    "description": "Execute the fred_search_series tool",
+    "name": "goldrush_get_xyk_pool",
+    "description": "Get details for a specific XY=K pool by address using GoldRush (Covalent).",
     "inputSchema": {
       "type": "object",
       "properties": {}
     }
   },
   {
-    "name": "fred_get_series_info",
-    "description": "Execute the fred_get_series_info tool",
+    "name": "goldrush_get_xyk_pools_for_token",
+    "description": "Get all XY=K pools containing a specific token using GoldRush (Covalent).",
     "inputSchema": {
       "type": "object",
       "properties": {}
     }
   },
   {
-    "name": "fred_get_releases",
-    "description": "Execute the fred_get_releases tool",
+    "name": "goldrush_get_xyk_pools_for_wallet",
+    "description": "Get XY=K pools that a wallet has LP positions in using GoldRush (Covalent).",
     "inputSchema": {
       "type": "object",
       "properties": {}
     }
   },
   {
-    "name": "fred_get_gdp",
-    "description": "Execute the fred_get_gdp tool",
+    "name": "goldrush_get_xyk_address_balances",
+    "description": "Get XY=K LP token balances for a wallet using GoldRush (Covalent).",
     "inputSchema": {
       "type": "object",
       "properties": {}
     }
   },
   {
-    "name": "fred_get_inflation",
-    "description": "Execute the fred_get_inflation tool",
+    "name": "goldrush_get_xyk_tokens",
+    "description": "Get all tokens traded on XY=K DEXes for a chain using GoldRush (Covalent).",
     "inputSchema": {
       "type": "object",
       "properties": {}
     }
   },
   {
-    "name": "fred_get_fed_rate",
-    "description": "Execute the fred_get_fed_rate tool",
+    "name": "goldrush_get_xyk_token",
+    "description": "Get details for a specific token on XY=K DEXes using GoldRush (Covalent).",
     "inputSchema": {
       "type": "object",
       "properties": {}
     }
   },
   {
-    "name": "fred_get_treasury_10y",
-    "description": "Execute the fred_get_treasury_10y tool",
+    "name": "goldrush_get_xyk_supported_dexes",
+    "description": "Get list of supported XY=K DEXes across chains using GoldRush (Covalent).",
     "inputSchema": {
       "type": "object",
       "properties": {}
     }
   },
   {
-    "name": "fred_get_unemployment",
-    "description": "Execute the fred_get_unemployment tool",
+    "name": "goldrush_get_xyk_dex_for_pool",
+    "description": "Get which DEX a specific XY=K pool belongs to using GoldRush (Covalent).",
     "inputSchema": {
       "type": "object",
       "properties": {}
     }
   },
   {
-    "name": "fred_get_sp500",
-    "description": "Execute the fred_get_sp500 tool",
+    "name": "goldrush_get_xyk_txns_for_account",
+    "description": "Get XY=K swap transactions for a wallet address using GoldRush (Covalent).",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "goldrush_get_xyk_txns_for_token",
+    "description": "Get XY=K swap transactions involving a specific token using GoldRush (Covalent).",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "goldrush_get_xyk_txns_for_pool",
+    "description": "Get XY=K swap transactions for a specific pool using GoldRush (Covalent).",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "goldrush_get_xyk_txns_for_dex",
+    "description": "Get XY=K swap transactions for an entire DEX using GoldRush (Covalent).",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "goldrush_get_xyk_ecosystem",
+    "description": "Get ecosystem-wide XY=K DEX statistics for a chain using GoldRush (Covalent).",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "goldrush_get_xyk_health",
+    "description": "Get health/status of XY=K DEX indexing for a chain using GoldRush (Covalent).",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "moralis_get_wallet_history",
+    "description": "Get full transaction history for a wallet using Moralis. Returns decoded transactions with transfers, approvals, and contract interactions.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "moralis_get_wallet_token_balances",
+    "description": "Get all ERC20 token balances for a wallet using Moralis. Returns token addresses, symbols, balances, and USD values.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "moralis_get_wallet_net_worth",
+    "description": "Get total net worth of a wallet across all chains using Moralis. Aggregates token values including native tokens.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "moralis_get_wallet_profitability",
+    "description": "Get realized and unrealized profit/loss for each token in a wallet using Moralis.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "moralis_get_wallet_profitability_summary",
+    "description": "Get aggregated P&L summary for a wallet using Moralis. Total realized gains, unrealized gains, and overall performance.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "moralis_get_wallet_defi_positions",
+    "description": "Get all DeFi protocol positions for a wallet using Moralis. Shows lending, staking, LP positions with values.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "moralis_get_wallet_defi_summary",
+    "description": "Get aggregated DeFi position summary for a wallet using Moralis.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "moralis_get_wallet_approvals",
+    "description": "Get all token approvals granted by a wallet using Moralis. Shows spender addresses and approved amounts.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "moralis_get_wallet_swaps",
+    "description": "Get swap/trade history for a wallet using Moralis. Shows DEX trades with tokens, amounts, and prices.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "moralis_get_wallet_active_chains",
+    "description": "Get list of chains where a wallet has been active using Moralis.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "moralis_get_wallet_stats",
+    "description": "Get wallet statistics using Moralis. Transaction counts, first/last activity, token counts.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "moralis_get_wallet_nfts",
+    "description": "Get all NFTs owned by a wallet using Moralis. Returns NFT metadata, collection info, and floor prices.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "moralis_get_wallet_insight",
+    "description": "Get wallet intelligence insights using Moralis. Wallet age, activity patterns, risk indicators.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "moralis_get_native_balance",
+    "description": "Get native token balance (ETH, MATIC, etc.) for a wallet using Moralis.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "moralis_get_wallet_token_transfers",
+    "description": "Get all ERC20 token transfer history for a wallet using Moralis.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "moralis_get_sol_balance",
+    "description": "Get SOL balance for a Solana wallet using Moralis.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "moralis_get_sol_token_balances",
+    "description": "Get all SPL token balances for a Solana wallet using Moralis.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "moralis_get_sol_portfolio",
+    "description": "Get full portfolio for a Solana wallet including SOL and all tokens using Moralis.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "moralis_get_sol_swaps",
+    "description": "Get swap/trade history for a Solana wallet using Moralis.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "moralis_get_pumpfun_new_tokens",
+    "description": "Get newly created tokens on PumpFun using Moralis.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "moralis_get_pumpfun_bonding_tokens",
+    "description": "Get tokens currently in bonding curve on PumpFun using Moralis.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "moralis_get_pumpfun_graduated_tokens",
+    "description": "Get tokens that graduated from PumpFun bonding curve using Moralis.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "moralis_get_token_price",
+    "description": "Get real-time price for an ERC20 token using Moralis. Returns USD price, native price, and 24h change.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "moralis_get_token_metadata",
+    "description": "Get metadata for ERC20 tokens using Moralis. Returns name, symbol, decimals, logo, and verification status.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "moralis_get_token_holders",
+    "description": "Get holder count and top holders for an ERC20 token using Moralis.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "moralis_get_token_transfers",
+    "description": "Get all transfers for a specific ERC20 token using Moralis.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "moralis_get_token_pairs",
+    "description": "Get all trading pairs/liquidity pools for a token using Moralis.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "moralis_get_token_top_traders",
+    "description": "Get top profitable wallets for a specific token using Moralis.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "moralis_get_token_score",
+    "description": "Get security/quality score for a token using Moralis. Analyzes contract, liquidity, holder distribution.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "moralis_search_tokens",
+    "description": "Search for tokens by name or symbol across all chains using Moralis.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "moralis_get_trending_tokens",
+    "description": "Get trending tokens across chains using Moralis.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "moralis_resolve_ens_domain",
+    "description": "Resolve an ENS domain name to an Ethereum address using Moralis.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "moralis_resolve_address",
+    "description": "Reverse resolve an Ethereum address to its ENS domain name using Moralis.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "moralis_get_token_price_batch",
+    "description": "Get prices for multiple ERC20 tokens in a single call using Moralis. Up to 25 tokens per request.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "moralis_get_token_analytics",
+    "description": "Get buy/sell analytics for a token using Moralis. Buyer/seller counts, volume across timeframes.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "moralis_get_token_holder_stats",
+    "description": "Get historical holder count over time for an ERC20 token using Moralis.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "moralis_get_pair_ohlcv",
+    "description": "Get OHLCV candlestick data for a DEX trading pair using Moralis.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "moralis_get_pair_stats",
+    "description": "Get trading statistics for a DEX pair using Moralis. Volume, liquidity, transaction count.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "moralis_get_pair_snipers",
+    "description": "Get sniper wallets that bought a token within the first blocks of a pair's creation using Moralis.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "moralis_filter_tokens",
+    "description": "Filter and screen tokens with 20+ metrics using Moralis Discovery API.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "moralis_get_top_gainers",
+    "description": "Get top gaining tokens by price change using Moralis.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "moralis_get_top_losers",
+    "description": "Get top losing tokens by price change using Moralis.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "moralis_get_transaction",
+    "description": "Get transaction details by hash using Moralis. Returns decoded transaction data.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "moralis_get_decoded_transaction",
+    "description": "Get fully decoded transaction by hash using Moralis verbose mode.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "moralis_get_sol_token_price",
+    "description": "Get price for a Solana SPL token using Moralis.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "goldrush_get_nft_metadata",
+    "description": "Get NFT metadata for a specific token using GoldRush (Covalent). Returns name, description, image, attributes.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "goldrush_get_nft_token_ids",
+    "description": "Get all token IDs for an NFT collection using GoldRush (Covalent).",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "goldrush_get_nft_transactions",
+    "description": "Get transaction history for an NFT token using GoldRush (Covalent).",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "goldrush_get_nft_traits",
+    "description": "Get trait types for an NFT collection using GoldRush (Covalent).",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "goldrush_get_nft_trait_values",
+    "description": "Get values for a specific trait type in an NFT collection using GoldRush (Covalent).",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "goldrush_get_nft_traits_summary",
+    "description": "Get trait summary/rarity data for an NFT collection using GoldRush (Covalent).",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "goldrush_get_nft_floor_price",
+    "description": "Get floor price for an NFT collection using GoldRush (Covalent).",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "goldrush_get_nft_volume",
+    "description": "Get trading volume for an NFT collection using GoldRush (Covalent).",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "goldrush_get_nft_sale_count",
+    "description": "Get sale count for an NFT collection using GoldRush (Covalent).",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "goldrush_get_chain_collections",
+    "description": "Get all NFT collections on a chain using GoldRush (Covalent).",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "goldrush_get_nft_approvals",
+    "description": "Get all NFT-specific approvals (operator permissions) granted by a wallet using GoldRush (Covalent).",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "tenderly_simulate_transaction",
+    "description": "Simulate an EVM transaction without sending it on-chain using Tenderly. Returns asset changes, balance changes, gas used, call trace.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "tenderly_simulate_bundle",
+    "description": "Simulate a bundle of sequential EVM transactions using Tenderly.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "tenderly_estimate_gas",
+    "description": "Estimate gas cost for an EVM transaction using Tenderly simulation.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "tenderly_get_supported_networks",
+    "description": "Get the list of EVM networks supported by Tenderly for transaction simulation.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "tenderly_decode_calldata",
+    "description": "Decode and analyze EVM transaction calldata by running a simulation with ABI decoding using Tenderly.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "tenderly_trace_transaction",
+    "description": "Get a decoded trace for any on-chain transaction by hash using Tenderly.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "tenderly_gas_price",
+    "description": "Get real-time gas price predictions with low/medium/high confidence levels using Tenderly.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "tenderly_suggest_gas_fee",
+    "description": "Get EIP-1559 gas fee suggestions using Tenderly Gateway RPC.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "tenderly_decode_input",
+    "description": "Decode raw EVM transaction calldata into human-readable function name and parameters using Tenderly.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "tenderly_decode_error",
+    "description": "Decode EVM revert/error data into human-readable error name and parameters using Tenderly.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "tenderly_get_contract_abi",
+    "description": "Get the ABI for any verified smart contract using Tenderly Gateway RPC.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "tenderly_decode_event",
+    "description": "Decode raw EVM event log data into human-readable event name and parameters using Tenderly.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "tenderly_get_storage_changes",
+    "description": "Get storage slot change history for a smart contract using Tenderly.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "tenderly_get_transactions_range",
+    "description": "Get transactions between two addresses within a block range using Tenderly.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "tenderly_function_signatures",
+    "description": "Look up function signatures by their 4-byte selector using Tenderly.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "tenderly_error_signatures",
+    "description": "Look up custom error signatures by their 4-byte selector using Tenderly.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "tenderly_event_signature",
+    "description": "Look up an event signature by its 32-byte topic hash using Tenderly.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "tenderly_share_simulation",
+    "description": "Share a Tenderly simulation publicly by generating a shareable link.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "tenderly_get_block_number",
+    "description": "Get the latest block number for an EVM network using Tenderly.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "codex_prediction_market_stats",
+    "description": "Get detailed statistics for a specific prediction market using Codex by Defined.fi.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "codex_prediction_event_stats",
+    "description": "Get detailed statistics for a prediction event using Codex by Defined.fi.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "codex_prediction_trader_stats",
+    "description": "Get prediction market statistics for a specific trader using Codex by Defined.fi.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "codex_prediction_trader_markets",
+    "description": "Get all prediction markets a trader has participated in using Codex by Defined.fi.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "codex_prediction_trader_bars",
+    "description": "Get time-series chart data for a prediction market trader using Codex by Defined.fi.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "codex_prediction_market_bars",
+    "description": "Get time-series chart data for a prediction market using Codex by Defined.fi.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "codex_prediction_event_bars",
+    "description": "Get time-series chart data for a prediction event using Codex by Defined.fi.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "codex_prediction_event_top_markets",
+    "description": "Get the top markets within a prediction event using Codex by Defined.fi.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "codex_prediction_trades",
+    "description": "Get prediction market trade history using Codex by Defined.fi.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "codex_prediction_markets",
+    "description": "Look up specific prediction markets by their IDs using Codex by Defined.fi.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "codex_prediction_traders",
+    "description": "Look up specific prediction market traders by their IDs using Codex by Defined.fi.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "codex_prediction_token_holders",
+    "description": "Get token holder data for prediction market outcome tokens using Codex by Defined.fi.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "codex_filter_prediction_events",
+    "description": "Filter and search prediction events using Codex by Defined.fi.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "codex_prediction_categories",
+    "description": "Get prediction market categories using Codex by Defined.fi.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "codex_filter_prediction_markets",
+    "description": "Filter and search prediction markets with advanced criteria using Codex by Defined.fi.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "codex_filter_prediction_trader_markets",
+    "description": "Filter trader-market pairs in prediction markets using Codex by Defined.fi.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "codex_filter_prediction_traders",
+    "description": "Filter and search prediction market traders with advanced criteria using Codex by Defined.fi.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "codex_prediction_market_price",
+    "description": "Get current outcome prices for a prediction market using Codex by Defined.fi.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "codex_prediction_trader_holdings",
+    "description": "Get a trader's current prediction market holdings using Codex by Defined.fi.",
     "inputSchema": {
       "type": "object",
       "properties": {}

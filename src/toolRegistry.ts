@@ -4,13 +4,12 @@ export let ToolRegistry = [
   {
     "category": "Market Data and Price",
     "name": "get_market_and_price_endpoints",
-    "description": "Endpoints to retrieve real-time and historical cryptocurrency prices, market caps, trading volumes, OHLC data, global market statistics, supported currencies, basic market performance metrics across different timeframes and asset platforms, stablecoin market analytics, stablecoin price tracking, comprehensive stablecoin market cap data across multiple chains, social sentiment-enhanced market metrics including Galaxy Score™ and AltRank™ rankings, centralized exchange (CEX) trading data including real-time tickers, order books, recent trades, candlestick charts, best bid/ask prices, CEX exchange metadata and volume charts, derivatives pricing (index, mark, and premium), perpetual futures funding rates, leverage tiers, options trading analytics, and available trading markets/currencies across major exchanges. Provider guide: Use coingecko/lunarcrush tools for market-wide price data and sentiment. Use ccxt_ tools for CEX trading data. Use goldrush_ tools for on-chain token price history and gas prices across 100+ chains.",
+    "description": "Endpoints to retrieve real-time and historical cryptocurrency prices, market caps, trading volumes, OHLC data, global market statistics, supported currencies, basic market performance metrics across different timeframes and asset platforms, stablecoin market analytics, stablecoin price tracking, comprehensive stablecoin market cap data across multiple chains, centralized exchange (CEX) trading data including real-time tickers, order books, recent trades, candlestick charts, best bid/ask prices, CEX exchange metadata and volume charts, derivatives pricing (index, mark, and premium), perpetual futures funding rates, leverage tiers, options trading analytics, and available trading markets/currencies across major exchanges. Provider guide: Use coingecko tools for market-wide price data. Use ccxt_ tools for CEX trading data. Use goldrush_ tools for on-chain token price history and gas prices across 100+ chains.",
     "tools": [
       "get_coins_index",
       "get_coins_market_data",
       "get_coin_history",
       "get_coin_market_chart_range",
-      "get_coin_ohlc_range",
       "get_price",
       "get_gainers_losers",
       "get_contract_coin",
@@ -28,10 +27,6 @@ export let ToolRegistry = [
       "get_btc_exchange_rates",
       "get_global_market_cap_chart",
       "get_coin_ohlc",
-      "get_circulating_supply_chart",
-      "get_circulating_supply_chart_range",
-      "get_total_supply_chart",
-      "get_total_supply_chart_range",
       "get_stablecoins",
       "get_stablecoin_chains",
       "get_stablecoin_charts_global",
@@ -43,10 +38,6 @@ export let ToolRegistry = [
       "get_batch_historical_prices",
       "get_price_percentage_change",
       "get_first_prices",
-      "get_crypto_market_metrics",
-      "get_coin_performance",
-      "get_supported_stocks",
-      "get_stock_analytics",
       "get_ticker",
       "get_tickers",
       "get_orderbook",
@@ -66,14 +57,13 @@ export let ToolRegistry = [
       "get_long_short_ratio",
       "get_liquidations",
       "get_borrow_rates",
-      "get_debank_token_price_history",
       "get_stablecoin_dominance",
       "get_leverage_tiers",
       // GoldRush market/price tools
       "goldrush_get_historical_token_prices",
       "goldrush_get_gas_prices",
       "goldrush_get_pool_spot_prices",
-      // CEX exchange data (moved from On-Chain DEX — these are centralized exchange tools)
+      // CEX exchange data
       "get_exchanges",
       "get_exchange",
       "get_exchange_tickers",
@@ -83,11 +73,11 @@ export let ToolRegistry = [
       "get_derivatives_exchanges",
       "get_derivatives_exchange",
       "filter_exchanges",
-      // Options/derivatives market data (moved from On-Chain DEX)
+      // Options/derivatives market data
       "get_options_overview",
       "get_options_by_chain",
       "get_options_protocol",
-      // CEX infrastructure (moved from Network & Infrastructure — these return market/trading data)
+      // CEX infrastructure
       "get_exchange_markets",
       "get_exchange_currencies"
     ]
@@ -113,7 +103,6 @@ export let ToolRegistry = [
       "get_token_ohlcv",
       "get_token_pools",
       "get_token_trades",
-      "get_onchain_token_top_traders",
       "filter_pools",
       "search_trending_pools",
       "search_pools",
@@ -140,20 +129,30 @@ export let ToolRegistry = [
       "get_dex_volumes_by_chain",
       "defillama_get_bridges",
       "defillama_get_bridge_by_id",
-      "defillama_get_bridge_volume"
+      "defillama_get_bridge_volume",
+      // GoldRush XY=K DEX analytics tools
+      "goldrush_get_xyk_pools",
+      "goldrush_get_xyk_pool",
+      "goldrush_get_xyk_pools_for_token",
+      "goldrush_get_xyk_pools_for_wallet",
+      "goldrush_get_xyk_address_balances",
+      "goldrush_get_xyk_tokens",
+      "goldrush_get_xyk_token",
+      "goldrush_get_xyk_supported_dexes",
+      "goldrush_get_xyk_dex_for_pool",
+      "goldrush_get_xyk_txns_for_account",
+      "goldrush_get_xyk_txns_for_token",
+      "goldrush_get_xyk_txns_for_pool",
+      "goldrush_get_xyk_txns_for_dex",
+      "goldrush_get_xyk_ecosystem",
+      "goldrush_get_xyk_health"
     ]
   },
   {
     "category": "Portfolio & Wallet",
     "name": "get_portfolio_wallet_endpoints",
-    "description": "Endpoints for tracking user wallet balances, transaction history, portfolio positions across protocols and chains, net asset calculations, token holdings analysis, comprehensive wallet activity monitoring, real-time balance tracking, balance update history over time, multi-token portfolio analysis, balance changes with transaction context, financial auditing capabilities for individual users and addresses, wallet filtering and discovery, and NFT holdings tracking. Provider guide: Use debank_ tools for EVM wallet portfolios, DeFi positions, and protocol-level analytics. Use goldrush_ tools for Bitcoin wallets, historical balance snapshots at specific blocks, 100+ chain coverage, and decoded transaction logs.",
+    "description": "Endpoints for tracking user wallet balances, transaction history, portfolio positions across protocols and chains, net asset calculations, token holdings analysis, comprehensive wallet activity monitoring, real-time balance tracking, balance update history over time, multi-token portfolio analysis, balance changes with transaction context, financial auditing capabilities for individual users and addresses, wallet filtering and discovery, NFT holdings tracking, wallet PnL, DeFi positions, swap history, and wallet insight metrics. Provider guide: Use moralis_ tools for wallet intelligence (PnL, DeFi positions, swap history, net worth, approvals, active chains, wallet insights). Use goldrush_ tools for Bitcoin wallets, historical balance snapshots at specific blocks, 100+ chain coverage, and decoded transaction logs.",
     "tools": [
-      "get_wallet_history",
-      "get_wallet_balance",
-      "get_wallet_token_balances",
-      "get_wallet_protocol_positions",
-      "get_wallet_defi_positions",
-      "get_wallet_defi_positions_all_chains",
       "get_wallet_balances",
       "get_wallet_token_events",
       "filter_wallets",
@@ -163,11 +162,6 @@ export let ToolRegistry = [
       "get_wallet_nft_collections",
       "get_wallet_nft_assets",
       "filter_network_wallets",
-      "get_wallet_active_chains",
-      "get_wallet_chain_balance",
-      "get_portfolio_history",
-      "get_chain_portfolio_history",
-      "get_all_chain_history",
       // GoldRush wallet/portfolio tools
       "goldrush_get_token_balances",
       "goldrush_get_historical_balances",
@@ -186,7 +180,32 @@ export let ToolRegistry = [
       "goldrush_get_transactions_earliest",
       "goldrush_get_transactions_latest",
       "goldrush_get_transactions_paginated",
-      "goldrush_get_transactions_time_buckets"
+      "goldrush_get_transactions_time_buckets",
+      // Moralis wallet intelligence tools
+      "moralis_get_wallet_history",
+      "moralis_get_wallet_token_balances",
+      "moralis_get_wallet_net_worth",
+      "moralis_get_wallet_profitability",
+      "moralis_get_wallet_profitability_summary",
+      "moralis_get_wallet_defi_positions",
+      "moralis_get_wallet_defi_summary",
+      "moralis_get_wallet_approvals",
+      "moralis_get_wallet_swaps",
+      "moralis_get_wallet_active_chains",
+      "moralis_get_wallet_stats",
+      "moralis_get_wallet_nfts",
+      "moralis_get_wallet_insight",
+      "moralis_get_native_balance",
+      "moralis_get_wallet_token_transfers",
+      // Moralis Solana wallet tools
+      "moralis_get_sol_balance",
+      "moralis_get_sol_token_balances",
+      "moralis_get_sol_portfolio",
+      "moralis_get_sol_swaps",
+      // Moralis PumpFun tools
+      "moralis_get_pumpfun_new_tokens",
+      "moralis_get_pumpfun_bonding_tokens",
+      "moralis_get_pumpfun_graduated_tokens"
     ]
   },
   {
@@ -208,20 +227,38 @@ export let ToolRegistry = [
       "get_recently_updated_tokens",
       "get_token_lifecycle_events",
       "get_token_top_traders",
-      "get_coin_metadata",
       "list_top_tokens",
-      "get_debank_token_info",
-      "get_tokens_by_ids",
-      "get_debank_top_holders",
       "get_companies_treasury",
       "get_entities_list",
       "get_treasury_by_entity",
       "get_treasury_holding_chart",
       "get_treasury_transaction_history",
-      "get_token_lists",
-      "explain_transaction",
       // GoldRush token tools
-      "goldrush_get_token_holders"
+      "goldrush_get_token_holders",
+      // Moralis token tools
+      "moralis_get_token_price",
+      "moralis_get_token_metadata",
+      "moralis_get_token_holders",
+      "moralis_get_token_transfers",
+      "moralis_get_token_pairs",
+      "moralis_get_token_top_traders",
+      "moralis_get_token_score",
+      "moralis_search_tokens",
+      "moralis_get_trending_tokens",
+      "moralis_resolve_ens_domain",
+      "moralis_resolve_address",
+      "moralis_get_token_price_batch",
+      "moralis_get_token_analytics",
+      "moralis_get_token_holder_stats",
+      "moralis_get_pair_ohlcv",
+      "moralis_get_pair_stats",
+      "moralis_get_pair_snipers",
+      "moralis_filter_tokens",
+      "moralis_get_top_gainers",
+      "moralis_get_top_losers",
+      "moralis_get_transaction",
+      "moralis_get_decoded_transaction",
+      "moralis_get_sol_token_price"
     ]
   },
   {
@@ -229,8 +266,6 @@ export let ToolRegistry = [
     "name": "get_defi_protocol_endpoints",
     "description": "Endpoints for comprehensive DeFi protocol analysis including Total Value Locked (TVL) data, protocol listings, chain-specific TVL metrics, historical TVL tracking across all chains, protocol fee analysis, yield farming analytics with APY data, detailed protocol information, comprehensive DeFi ecosystem statistics, blockchain network TVL tracking, yield pool management and historical charts, and protocol fee structures across different DeFi platforms.",
     "tools": [
-      "get_protocol_info",
-      "get_protocols",
       "get_global_defi",
       "get_defi_protocols",
       "get_defi_protocol",
@@ -266,9 +301,6 @@ export let ToolRegistry = [
       "get_nft_by_contract",
       "get_nft_markets",
       "get_nft_contract_market_chart",
-      "get_wallet_nfts",
-      "get_wallet_all_nfts",
-      "get_nft_collection",
       "get_nft_pool",
       "get_nft_pool_events",
       "get_nft_pool_stats",
@@ -290,19 +322,26 @@ export let ToolRegistry = [
       "get_prime_pools",
       "get_nft_holders",
       "get_prime_holders",
-      "get_nft_collections",
-      "get_nft_collection_analysis",
-      "get_nft_market_trends",
       // GoldRush NFT tools
       "goldrush_get_nft_balances",
       "goldrush_check_nft_ownership",
-      "goldrush_check_nft_token_ownership"
+      "goldrush_check_nft_token_ownership",
+      "goldrush_get_nft_metadata",
+      "goldrush_get_nft_token_ids",
+      "goldrush_get_nft_transactions",
+      "goldrush_get_nft_traits",
+      "goldrush_get_nft_trait_values",
+      "goldrush_get_nft_traits_summary",
+      "goldrush_get_nft_floor_price",
+      "goldrush_get_nft_volume",
+      "goldrush_get_nft_sale_count",
+      "goldrush_get_chain_collections"
     ]
   },
   {
     "category": "Security & Risk Analysis",
     "name": "get_security_risk_endpoints",
-    "description": "Comprehensive security endpoints for token security analysis, NFT authenticity verification, honeypot detection, malicious address identification, phishing site detection, contract approval risks, dApp security assessment, ABI data decoding, and comprehensive security metrics to protect users from scams, rugpulls, and malicious contracts. Provider guide: Use goplus_ tools for threat detection (honeypots, scams, phishing, rugpulls). Use goldrush_ tools for token approval auditing across 100+ chains.",
+    "description": "Comprehensive security endpoints for token security analysis, NFT authenticity verification, honeypot detection, malicious address identification, phishing site detection, contract approval risks, dApp security assessment, ABI data decoding, EVM transaction simulation, gas estimation, calldata decoding, and comprehensive security metrics to protect users from scams, rugpulls, and malicious contracts. Provider guide: Use goplus_ tools for threat detection (honeypots, scams, phishing, rugpulls). Use goldrush_ tools for token approval auditing across 100+ chains. Use tenderly_ tools for transaction simulation, gas estimation, and calldata decoding across 100+ EVM chains.",
     "tools": [
       "get_token_security",
       "get_nft_security",
@@ -313,9 +352,6 @@ export let ToolRegistry = [
       "check_phishing_site",
       "decode_abi",
       "defillama_get_hacks",
-      "get_wallet_token_approvals",
-      "simulate_transaction",
-      "get_wallet_nft_approvals",
       "simulate_evm_transaction",
       "simulate_solana_transaction",
       "detect_rugpull",
@@ -324,7 +360,28 @@ export let ToolRegistry = [
       "get_sui_token_security",
       "check_approval_security_v2",
       // GoldRush security tools
-      "goldrush_get_token_approvals"
+      "goldrush_get_token_approvals",
+      "goldrush_get_nft_approvals",
+      // Tenderly simulation & security tools
+      "tenderly_simulate_transaction",
+      "tenderly_simulate_bundle",
+      "tenderly_estimate_gas",
+      "tenderly_get_supported_networks",
+      "tenderly_decode_calldata",
+      "tenderly_trace_transaction",
+      "tenderly_gas_price",
+      "tenderly_suggest_gas_fee",
+      "tenderly_decode_input",
+      "tenderly_decode_error",
+      "tenderly_get_contract_abi",
+      "tenderly_decode_event",
+      "tenderly_get_storage_changes",
+      "tenderly_get_transactions_range",
+      "tenderly_function_signatures",
+      "tenderly_error_signatures",
+      "tenderly_event_signature",
+      "tenderly_share_simulation",
+      "tenderly_get_block_number"
     ]
   },
   {
@@ -336,14 +393,10 @@ export let ToolRegistry = [
       "get_networks_list",
       "get_network_status",
       "get_network_stats",
-      "get_gas_prices",
       "get_asset_platforms",
       "get_community_notes",
-      "get_system_changes",
       "get_exchange_status",
       "get_exchange_time",
-      "get_supported_chains",
-      "get_chain_details",
       "get_block_by_timestamp",
       "get_goplus_supported_chains",
       // GoldRush network tools
@@ -377,30 +430,6 @@ export let ToolRegistry = [
     ]
   },
   {
-    "category": "Social Media & Sentiment Analytics",
-    "name": "get_social_sentiment_endpoints",
-    "description": "Endpoints for social media analytics, sentiment analysis, influencer tracking, social engagement metrics, trending topics analysis, news aggregation, creator analytics, post engagement tracking, social dominance metrics, Galaxy Score™, AltRank™, and comprehensive social sentiment indicators across crypto assets, stocks, and NFTs. Includes real-time social monitoring, influencer identification, content virality analysis, and social trend detection.",
-    "tools": [
-      "get_topic_creators",
-      "get_topic_news",
-      "get_topic_posts",
-      "get_topic_metrics",
-      "get_trending_topics",
-      "get_category_info",
-      "get_category_topics",
-      "get_category_posts",
-      "get_category_news",
-      "get_category_creators",
-      "get_categories_list",
-      "get_creators_list",
-      "get_creator_profile",
-      "get_creator_metrics",
-      "get_creator_posts",
-      "get_post_details",
-      "get_post_metrics"
-    ]
-  },
-  {
     "category": "Stocks & Equities",
     "name": "get_stocks_equities_endpoints",
     "description": "Endpoints for stock market data including real-time quotes, historical OHLCV candles, company profiles, basic financial metrics (P/E, EPS, market cap), analyst recommendations and price targets, symbol search, and market news. Provider guide: Use finnhub_ tools for real-time US stock quotes, historical price data, analyst consensus, company profiles, and financial news.",
@@ -429,18 +458,8 @@ export let ToolRegistry = [
   {
     "category": "Economic Indicators",
     "name": "get_economic_indicators_endpoints",
-    "description": "Endpoints for US macroeconomic data including GDP, CPI inflation, federal funds rate, treasury yields, unemployment rate, S&P 500 index, economic event calendar, and 800,000+ FRED time series. Provider guide: Use fred_ tools for economic time series data (GDP, CPI, rates, yields, unemployment). Use finnhub_ tools for economic event calendars, market open/close status, and country data.",
+    "description": "Endpoints for economic event calendars, market open/close status, and country data. Provider guide: Use finnhub_ tools for upcoming economic events, market status, and country listings.",
     "tools": [
-      "fred_get_series_observations",
-      "fred_search_series",
-      "fred_get_series_info",
-      "fred_get_releases",
-      "fred_get_gdp",
-      "fred_get_inflation",
-      "fred_get_fed_rate",
-      "fred_get_treasury_10y",
-      "fred_get_unemployment",
-      "fred_get_sp500",
       "finnhub_get_economic_calendar",
       "finnhub_get_market_status",
       "finnhub_get_country_list"
@@ -456,6 +475,32 @@ export let ToolRegistry = [
       "finnhub_get_company_news",
       "finnhub_get_earnings_calendar",
       "finnhub_get_ipo_calendar"
+    ]
+  },
+  {
+    "category": "Prediction Markets",
+    "name": "get_prediction_markets_endpoints",
+    "description": "Endpoints for prediction market data including event/market/trader stats, outcome prices, trade history, bar charts, token holders, and filtering. Provider: Codex (Defined.fi) covering Polymarket and Kalshi.",
+    "tools": [
+      "codex_prediction_market_stats",
+      "codex_prediction_event_stats",
+      "codex_prediction_trader_stats",
+      "codex_prediction_trader_markets",
+      "codex_prediction_trader_bars",
+      "codex_prediction_market_bars",
+      "codex_prediction_event_bars",
+      "codex_prediction_event_top_markets",
+      "codex_prediction_trades",
+      "codex_prediction_markets",
+      "codex_prediction_traders",
+      "codex_prediction_token_holders",
+      "codex_filter_prediction_events",
+      "codex_prediction_categories",
+      "codex_filter_prediction_markets",
+      "codex_filter_prediction_trader_markets",
+      "codex_filter_prediction_traders",
+      "codex_prediction_market_price",
+      "codex_prediction_trader_holdings"
     ]
   },
 ]
@@ -500,11 +545,11 @@ export const CategoryEndpoints: { [key: number]: string } = {
   6: "/hive_security_risk/mcp",         // Security & Risk Analysis
   7: "/hive_network_infrastructure/mcp", // Network & Infrastructure
   8: "/hive_search_discovery/mcp",      // Search & Discovery
-  9: "/hive_social_sentiment/mcp",      // Social Media & Sentiment Analytics
-  10: "/hive_stocks_equities/mcp",      // Stocks & Equities
-  11: "/hive_forex_commodities/mcp",    // Forex & Commodities
-  12: "/hive_economic_indicators/mcp",  // Economic Indicators
-  13: "/hive_alternative_data/mcp",     // Alternative Data
+  9: "/hive_stocks_equities/mcp",       // Stocks & Equities
+  10: "/hive_forex_commodities/mcp",    // Forex & Commodities
+  11: "/hive_economic_indicators/mcp",  // Economic Indicators
+  12: "/hive_alternative_data/mcp",     // Alternative Data
+  13: "/hive_prediction_markets/mcp",   // Prediction Markets
 };
 
 export function getToolByCategory(category:number){

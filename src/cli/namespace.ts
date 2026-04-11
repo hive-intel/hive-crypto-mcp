@@ -136,7 +136,7 @@ export const NAMESPACE: DomainCommand[] = [
       {
         name: "protocols",
         description: "All DeFi protocols",
-        tool: "get_protocols",
+        tool: "get_defi_protocols",
       },
       {
         name: "fees",
@@ -170,7 +170,7 @@ export const NAMESPACE: DomainCommand[] = [
       {
         name: "balance",
         description: "Wallet total balance",
-        tool: "get_wallet_balance",
+        tool: "get_wallet_balances",
         args: {
           id: {
             flag: "--address <addr>",
@@ -182,7 +182,7 @@ export const NAMESPACE: DomainCommand[] = [
       {
         name: "tokens",
         description: "Token holdings",
-        tool: "get_wallet_token_balances",
+        tool: "goldrush_get_token_balances",
         args: {
           id: {
             flag: "--address <addr>",
@@ -194,7 +194,7 @@ export const NAMESPACE: DomainCommand[] = [
       {
         name: "positions",
         description: "DeFi positions",
-        tool: "get_wallet_defi_positions",
+        tool: "moralis_get_wallet_defi_positions",
         args: {
           id: {
             flag: "--address <addr>",
@@ -430,106 +430,70 @@ export const NAMESPACE: DomainCommand[] = [
   {
     name: "macro",
     description:
-      "Macroeconomic indicators — GDP, CPI, rates, employment, calendar",
+      "Economic calendar, market status, and country data",
     commands: [
-      { name: "gdp", description: "US GDP", tool: "fred_get_gdp" },
-      {
-        name: "cpi",
-        description: "CPI inflation rate",
-        tool: "fred_get_inflation",
-      },
-      {
-        name: "fed-rate",
-        description: "Federal funds rate",
-        tool: "fred_get_fed_rate",
-      },
-      {
-        name: "treasury",
-        description: "10-year treasury yield",
-        tool: "fred_get_treasury_10y",
-      },
-      {
-        name: "unemployment",
-        description: "Unemployment rate",
-        tool: "fred_get_unemployment",
-      },
-      { name: "sp500", description: "S&P 500 index", tool: "fred_get_sp500" },
       {
         name: "calendar",
         description: "Economic event calendar",
         tool: "finnhub_get_economic_calendar",
       },
       {
-        name: "search",
-        description: "Search FRED series",
-        tool: "fred_search_series",
+        name: "market-status",
+        description: "Market open/close status",
+        tool: "finnhub_get_market_status",
         args: {
-          search_text: {
-            flag: "--query <text>",
-            description: "Search term",
+          exchange: {
+            flag: "--exchange <code>",
+            description: "Exchange code (e.g., US, L, T)",
             required: true,
           },
         },
+      },
+      {
+        name: "countries",
+        description: "Supported countries list",
+        tool: "finnhub_get_country_list",
       },
     ],
   },
   {
-    name: "social",
+    name: "prediction",
     description:
-      "Social media analytics — sentiment, influencers, trending topics",
+      "Prediction markets — events, traders, outcomes (Polymarket, Kalshi)",
     commands: [
       {
-        name: "trending",
-        description: "Trending topics",
-        tool: "get_trending_topics",
+        name: "categories",
+        description: "Prediction market categories",
+        tool: "codex_prediction_categories",
       },
       {
-        name: "metrics",
-        description: "Topic engagement metrics",
-        tool: "get_topic_metrics",
+        name: "events",
+        description: "Filter prediction events",
+        tool: "codex_filter_prediction_events",
         args: {
-          topic: {
-            flag: "--topic <name>",
-            description: "Topic or coin name",
-            required: true,
+          phrase: {
+            flag: "--query <text>",
+            description: "Search phrase",
+            required: false,
           },
         },
       },
       {
-        name: "creators",
-        description: "Top content creators",
-        tool: "get_topic_creators",
+        name: "markets",
+        description: "Filter prediction markets",
+        tool: "codex_filter_prediction_markets",
         args: {
-          topic: {
-            flag: "--topic <name>",
-            description: "Topic or coin name",
-            required: true,
+          phrase: {
+            flag: "--query <text>",
+            description: "Search phrase",
+            required: false,
           },
         },
       },
       {
-        name: "posts",
-        description: "Social media posts",
-        tool: "get_topic_posts",
-        args: {
-          topic: {
-            flag: "--topic <name>",
-            description: "Topic or coin name",
-            required: true,
-          },
-        },
-      },
-      {
-        name: "news",
-        description: "Topic news articles",
-        tool: "get_topic_news",
-        args: {
-          topic: {
-            flag: "--topic <name>",
-            description: "Topic or coin name",
-            required: true,
-          },
-        },
+        name: "traders",
+        description: "Top prediction market traders",
+        tool: "codex_filter_prediction_traders",
       },
     ],
   },
