@@ -17,14 +17,14 @@ function getApiUrl(): string {
 export async function runDoctor(opts: { probe?: boolean }): Promise<void> {
   const checks: { check: string; status: string; detail: string }[] = [];
 
-  // Check HIVE_API_KEY (optional for now — API is free)
+  // Check HIVE_API_KEY (required)
   const apiKey = process.env.HIVE_API_KEY;
   checks.push({
     check: "HIVE_API_KEY",
-    status: apiKey ? "PASS" : "INFO",
+    status: apiKey ? "PASS" : "FAIL",
     detail: apiKey
       ? `Set (${apiKey.slice(0, 4)}...)`
-      : "Not set (optional — API is currently free)",
+      : "Not set — required. Get a key at https://hiveintelligence.xyz",
   });
 
   // Check HIVE_API_URL

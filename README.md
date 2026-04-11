@@ -15,6 +15,20 @@ This gives you two commands:
 | `hive-intelligence` | MCP stdio server for AI clients (Claude Desktop, Cursor, VS Code, etc.) |
 | `hive` | CLI tool for terminal usage |
 
+## API Key
+
+An API key is required. Get one at [hiveintelligence.xyz](https://hiveintelligence.xyz) and set it as an environment variable:
+
+```bash
+export HIVE_API_KEY="hive_live_..."
+```
+
+Or use the CLI login:
+
+```bash
+hive auth login
+```
+
 ## MCP Server Setup
 
 ### Claude Desktop
@@ -29,7 +43,10 @@ Add to your config file:
   "mcpServers": {
     "hive": {
       "command": "npx",
-      "args": ["-y", "hive-intelligence"]
+      "args": ["-y", "hive-intelligence"],
+      "env": {
+        "HIVE_API_KEY": "hive_live_..."
+      }
     }
   }
 }
@@ -44,7 +61,10 @@ Add to `.cursor/mcp.json`:
   "mcpServers": {
     "hive": {
       "command": "npx",
-      "args": ["-y", "hive-intelligence"]
+      "args": ["-y", "hive-intelligence"],
+      "env": {
+        "HIVE_API_KEY": "hive_live_..."
+      }
     }
   }
 }
@@ -60,7 +80,10 @@ Add to `.vscode/mcp.json`:
     "hive": {
       "type": "stdio",
       "command": "npx",
-      "args": ["-y", "hive-intelligence"]
+      "args": ["-y", "hive-intelligence"],
+      "env": {
+        "HIVE_API_KEY": "hive_live_..."
+      }
     }
   }
 }
@@ -69,7 +92,7 @@ Add to `.vscode/mcp.json`:
 ### Claude Code
 
 ```bash
-claude mcp add hive-intelligence -- npx -y hive-intelligence
+claude mcp add hive-intelligence -e HIVE_API_KEY=hive_live_... -- npx -y hive-intelligence
 ```
 
 ### Remote MCP Server
@@ -77,7 +100,8 @@ claude mcp add hive-intelligence -- npx -y hive-intelligence
 For clients that support HTTP transport:
 
 ```
-https://mcp.hiveintelligence.xyz/mcp
+URL: https://mcp.hiveintelligence.xyz/mcp
+Headers: { "Authorization": "Bearer hive_live_..." }
 ```
 
 More details: https://hiveintelligence.xyz/crypto-mcp
@@ -206,7 +230,7 @@ CoinGecko, DefiLlama, GeckoTerminal, Codex (Defined.fi), Moralis, GoPlus, GoldRu
 
 | Variable | Description |
 |----------|-------------|
-| `HIVE_API_KEY` | API key (or use `hive auth login`) |
+| `HIVE_API_KEY` | **Required.** API key (or use `hive auth login`) |
 | `HIVE_API_URL` | Custom server URL (default: `https://mcp.hiveintelligence.xyz`) |
 | `API_EXECUTE_ENDPOINT` | Override MCP server backend URL |
 

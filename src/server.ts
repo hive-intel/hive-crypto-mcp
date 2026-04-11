@@ -17,6 +17,17 @@ import { CategoryEndpoints } from './toolRegistry';
 dotenv.config();
 
 const API_EXECUTE_ENDPOINT = process.env.API_EXECUTE_ENDPOINT || 'https://mcp.hiveintelligence.xyz/api/execute';
+const HIVE_API_KEY = process.env.HIVE_API_KEY || '';
+
+function getApiHeaders(): Record<string, string> {
+  const headers: Record<string, string> = {
+    'Content-Type': 'application/json',
+  };
+  if (HIVE_API_KEY) {
+    headers['Authorization'] = `Bearer ${HIVE_API_KEY}`;
+  }
+  return headers;
+}
 
 function getDynamicTools(){
   const allToolEndpoints = supportedTools
@@ -123,9 +134,7 @@ export class HiveMCPServer {
         // Call the API server's /execute endpoint
         const response = await fetch(API_EXECUTE_ENDPOINT, {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
+          headers: getApiHeaders(),
           body: JSON.stringify({
             toolName: toolName,
             arguments: request.params.arguments?.args
@@ -205,9 +214,7 @@ export class HiveMCPServer {
       // Call the API server's /execute endpoint
       const response = await fetch(API_EXECUTE_ENDPOINT, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: getApiHeaders(),
         body: JSON.stringify({
           toolName: toolName,
           arguments: request.params.arguments
