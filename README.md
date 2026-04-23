@@ -15,6 +15,20 @@ This gives you two commands:
 | `hive-intelligence` | MCP stdio server for AI clients (Claude Desktop, Cursor, VS Code, etc.) |
 | `hive` | CLI tool for terminal usage |
 
+> **Note:** `hive-intelligence` is an MCP stdio server — running it directly opens a stdio transport that waits for JSON-RPC messages. It is not interactive and does not accept subcommands. For terminal usage, use the `hive` CLI.
+
+### Run without installing
+
+The CLI is a separate bin in the same package, so with `npx` you must select it explicitly via `-p`:
+
+```bash
+# Run the CLI via npx (note: -p selects the package, `hive` is the bin)
+HIVE_API_KEY=hive_live_... npx -y -p hive-intelligence hive --help
+HIVE_API_KEY=hive_live_... npx -y -p hive-intelligence hive market price --ids bitcoin --vs usd
+
+# Plain `npx -y hive-intelligence` launches the MCP stdio server, not the CLI.
+```
+
 ## API Key
 
 An API key is required. Get one at [hiveintelligence.xyz](https://hiveintelligence.xyz) and set it as an environment variable:
@@ -108,7 +122,7 @@ More details: https://hiveintelligence.xyz/crypto-mcp
 
 ## CLI Usage
 
-The `hive` CLI is a lightweight client that talks to the Hive API. No API keys needed to get started.
+The `hive` CLI is a lightweight client that talks to the Hive API. Set `HIVE_API_KEY` (or run `hive auth login`) before making calls.
 
 ```bash
 # Get Bitcoin price
