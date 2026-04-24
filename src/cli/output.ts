@@ -1,4 +1,4 @@
-import { CliError, type ErrorCode, ExitCode } from "./errors.js";
+import { CliError, type ErrorCode } from "./errors.js";
 import { jqEval } from "./jq.js";
 
 // SIGPIPE — clean exit when piping to `head`, `less`, etc.
@@ -132,7 +132,7 @@ export async function writeOutput(envelope: Envelope): Promise<void> {
   // CSV output mode
   if (globalOpts.csv && envelope.ok && Array.isArray(envelope.data)) {
     process.stdout.write(
-      formatCsv(envelope.data as Record<string, unknown>[]) + "\n",
+      (await formatCsv(envelope.data as Record<string, unknown>[])) + "\n",
     );
     return;
   }
@@ -233,11 +233,14 @@ export function isCI(): boolean {
 }
 
 /** Format array of objects as RFC 4180 CSV. */
-export function formatCsv(data: Record<string, unknown>[]): string {
+export async function formatCsv(
+  data: Record<string, unknown>[],
+): Promise<string> {
   if (data.length === 0) return "";
+  const { formatCell } = await import("./format.js");
   const keys = [...new Set(data.flatMap((row) => Object.keys(row)))];
   const escape = (val: unknown): string => {
-    const str = val == null ? "" : String(val);
+    const str = formatCell(val);
     return str.includes(",") || str.includes('"') || str.includes("\n")
       ? `"${str.replace(/"/g, '""')}"`
       : str;

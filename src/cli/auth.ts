@@ -200,7 +200,7 @@ export async function runLogout(): Promise<void> {
 export async function runWhoami(): Promise<void> {
   const profile = getActiveProfile();
   if (!profile) {
-    process.stderr.write("Not logged in. Run: hive-mcp auth login\n");
+    process.stderr.write("Not logged in. Run: hive auth login\n");
     return;
   }
   process.stderr.write(
@@ -214,7 +214,7 @@ export async function runWhoami(): Promise<void> {
 export async function runProfiles(): Promise<void> {
   const profiles = listProfiles();
   if (profiles.length === 0) {
-    process.stderr.write("No profiles configured. Run: hive-mcp auth login\n");
+    process.stderr.write("No profiles configured. Run: hive auth login\n");
     return;
   }
   for (const p of profiles) {

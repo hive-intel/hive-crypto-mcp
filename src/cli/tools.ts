@@ -31,7 +31,7 @@ async function loadToolCatalog(): Promise<ToolEntry[]> {
     const { CliError } = await import("./errors.js");
     const { outputError } = await import("./output.js");
     await outputError(
-      new CliError("API_ERROR", msg, "Check: hive-mcp doctor"),
+      new CliError("API_ERROR", msg, "Check: hive doctor"),
       {},
     );
     return [];
@@ -178,7 +178,7 @@ export async function toolInfo(name: string): Promise<void> {
     const suggestion =
       similar.length > 0
         ? `Did you mean: ${similar.join(", ")}?`
-        : `Run: hive-mcp tools search "${name}"`;
+        : `Run: hive tools search "${name}"`;
     await outputError(
       new CliError("TOOL_NOT_FOUND", `Tool "${name}" not found`, suggestion),
       { tool: name },

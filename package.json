@@ -1,6 +1,6 @@
 {
   "name": "hive-intelligence",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "MCP server and CLI for Hive Intelligence — crypto, DeFi, stocks, forex, and macro data",
   "type": "module",
   "scripts": {

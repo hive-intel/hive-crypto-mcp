@@ -88,14 +88,14 @@ export function classifyError(error: unknown, toolName?: string): CliError {
     return new CliError(
       "PROVIDER_UNAVAILABLE",
       msg,
-      "Run: hive-mcp auth login",
+      "Run: hive auth login",
     );
   }
   if (lower.includes("not found") && toolName) {
     return new CliError(
       "TOOL_NOT_FOUND",
       msg,
-      `Run: hive-mcp tools search "${toolName}"`,
+      `Run: hive tools search "${toolName}"`,
     );
   }
 

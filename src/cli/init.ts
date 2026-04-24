@@ -112,5 +112,5 @@ export async function runInit(opts: {
 
   writeFileSync(envPath, lines + "\n", "utf-8");
   console.log(`.env written to ${envPath}`);
-  console.log("Run: hive-mcp doctor  to verify connectivity\n");
+  console.log("Run: hive doctor  to verify connectivity\n");
 }
