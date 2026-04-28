@@ -1,6 +1,26 @@
 {
   "$schema": "https://glama.ai/mcp/schemas/server.json",
-  "maintainers": [
-    "utsav-hive"
+  "maintainers": ["utsav-hive"],
+  "description": "Institutional-grade crypto market infrastructure for AI agents — 376+ tools across 10 categories from CoinGecko, DefiLlama, Moralis, GoldRush, Codex, GoPlus, Helius, Tenderly, and CCXT. MCP server + CLI for Claude Desktop, Cursor, ChatGPT, VS Code, Windsurf, and Gemini.",
+  "homepage": "https://hiveintelligence.xyz",
+  "repository": "https://github.com/hive-intel/hive-crypto-mcp",
+  "license": "MIT",
+  "tags": [
+    "mcp",
+    "mcp-server",
+    "ai-agents",
+    "crypto",
+    "cryptocurrency",
+    "defi",
+    "blockchain",
+    "web3",
+    "on-chain",
+    "wallet",
+    "nft",
+    "dex",
+    "prediction-markets",
+    "claude",
+    "cursor",
+    "chatgpt"
   ]
 }
