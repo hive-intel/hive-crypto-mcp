@@ -574,21 +574,8 @@ export const NAMESPACE: DomainCommand[] = [
   },
   {
     name: "nft",
-    description: "NFT analytics — collections, markets, trends, holders",
+    description: "NFT analytics — collections, markets, holders",
     commands: [
-      {
-        name: "trending",
-        description: "Trending NFT collections",
-        tool: "get_nft_market_trends",
-      },
-      {
-        name: "collection",
-        description: "Collection details",
-        tool: "get_nft_collection",
-        args: {
-          slug: { flag: "--slug <name>", description: "Collection slug" },
-        },
-      },
       {
         name: "markets",
         description: "NFT marketplace data",
