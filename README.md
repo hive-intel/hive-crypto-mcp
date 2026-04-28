@@ -4,7 +4,7 @@
 
 **Institutional-grade crypto market infrastructure for AI agents.**
 
-One MCP server. 376+ tools. 10 categories. 9 data providers. Built for Claude, Cursor, ChatGPT, and any agent that speaks Model Context Protocol.
+One MCP server. [376+ live tools](https://mcp.hiveintelligence.xyz/api/v1/tools). 10 categories. 9 data providers — [CoinGecko, DefiLlama, Moralis, GoldRush, Codex, GoPlus, Helius, Tenderly, and CCXT](#powered-by) normalized into a single agent-ready surface, so your agent gets prices, DeFi, wallets, security, and DEX flows in one request instead of nine APIs. Built for Claude, Cursor, ChatGPT, and any agent that speaks Model Context Protocol.
 
 [![npm version](https://img.shields.io/npm/v/hive-intelligence.svg?color=blue&label=npm)](https://www.npmjs.com/package/hive-intelligence)
 [![npm downloads](https://img.shields.io/npm/dw/hive-intelligence.svg?color=blue&label=downloads%2Fweek)](https://www.npmjs.com/package/hive-intelligence)
@@ -15,6 +15,8 @@ One MCP server. 376+ tools. 10 categories. 9 data providers. Built for Claude, C
 [**Quick Start**](#quickstart) · [**Example prompts**](#example-prompts) · [**Tool catalog**](#tool-catalog) · [**FAQ**](#faq) · [**Get an API key**](https://hiveintelligence.xyz/dashboard/keys)
 
 </div>
+
+> ⚡ **New here?** [Try the Free Demo](https://hiveintelligence.xyz/dashboard/keys) (10K credits/month, no card required) · [See install guides](https://hiveintelligence.xyz/install) · [Run a test prompt](#example-prompts)
 
 ---
 
