@@ -37,7 +37,7 @@ program
   .name("hive")
   .version(CLI_VERSION)
   .description(
-    "Hive Intelligence CLI — crypto, DeFi, stocks, forex, and macro data",
+    "Hive Intelligence CLI — institutional-grade crypto market data, DeFi, wallets, security, DEX, NFTs, and prediction markets for AI agents",
   )
   .exitOverride()
   .configureOutput({
@@ -495,7 +495,8 @@ Examples:
   $ hive auth login
   $ hive market price --ids bitcoin --vs usd
   $ hive defi tvl --protocol aave
-  $ hive stocks quote --symbol AAPL
+  $ hive security scan --token 0x...
+  $ hive portfolio balance --address 0x...
   $ hive tools search "price" --jq ".[] | .name"
   $ hive status
   $ hive alias set btc 'market price --ids bitcoin --vs usd'

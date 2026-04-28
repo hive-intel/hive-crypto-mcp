@@ -6,14 +6,13 @@ function getEnvBlock(): Record<string, string> {
   const keys = [
     "COINGECKO_PRO_API_KEY",
     "COINGECKO_DEMO_API_KEY",
-    "DEBANK_API_KEY",
     "GOPLUS_APP_KEY",
     "GOPLUS_APP_SECRET",
-    "LUNARCRUSH_API_KEY",
     "CODEX_API_KEY",
     "GOLDRUSH_API_KEY",
-    "FINNHUB_API_KEY",
-    "FRED_API_KEY",
+    "MORALIS_API_KEY",
+    "HELIUS_API_KEY",
+    "TENDERLY_ACCESS_KEY",
   ];
   for (const key of keys) {
     if (process.env[key]) envs[key] = process.env[key]!;

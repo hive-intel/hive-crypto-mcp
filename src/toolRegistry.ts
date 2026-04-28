@@ -430,57 +430,9 @@ export let ToolRegistry = [
     ]
   },
   {
-    "category": "Stocks & Equities",
-    "name": "get_stocks_equities_endpoints",
-    "description": "Endpoints for stock market data including real-time quotes, historical OHLCV candles, company profiles, basic financial metrics (P/E, EPS, market cap), analyst recommendations and price targets, symbol search, and market news. Provider guide: Use finnhub_ tools for real-time US stock quotes, historical price data, analyst consensus, company profiles, and financial news.",
-    "tools": [
-      "finnhub_get_stock_quote",
-      "finnhub_get_stock_candles",
-      "finnhub_get_company_profile",
-      "finnhub_get_basic_financials",
-      "finnhub_get_stock_recommendations",
-      "finnhub_get_price_target",
-      "finnhub_search_symbol",
-      "finnhub_get_market_news"
-    ]
-  },
-  {
-    "category": "Forex & Commodities",
-    "name": "get_forex_commodities_endpoints",
-    "description": "Endpoints for foreign exchange rates, currency pair historical candles, available forex symbols, and commodity price data (gold, silver, platinum). Provider guide: Use finnhub_ tools for real-time forex rates, currency pair OHLCV data, and commodity prices via XAU/XAG/XPT pairs.",
-    "tools": [
-      "finnhub_get_forex_candles",
-      "finnhub_get_forex_symbols",
-      "finnhub_get_forex_rates",
-      "finnhub_get_commodity_candles"
-    ]
-  },
-  {
-    "category": "Economic Indicators",
-    "name": "get_economic_indicators_endpoints",
-    "description": "Endpoints for economic event calendars, market open/close status, and country data. Provider guide: Use finnhub_ tools for upcoming economic events, market status, and country listings.",
-    "tools": [
-      "finnhub_get_economic_calendar",
-      "finnhub_get_market_status",
-      "finnhub_get_country_list"
-    ]
-  },
-  {
-    "category": "Alternative Data",
-    "name": "get_alternative_data_endpoints",
-    "description": "Endpoints for alternative financial data including insider (executive) trading transactions, insider sentiment scores, company-specific news, earnings calendar, and IPO calendar. Provider guide: Use finnhub_ tools for SEC-filed insider buy/sell data, insider sentiment (MSPR), upcoming earnings reports, IPO schedules, and company news.",
-    "tools": [
-      "finnhub_get_insider_transactions",
-      "finnhub_get_insider_sentiment",
-      "finnhub_get_company_news",
-      "finnhub_get_earnings_calendar",
-      "finnhub_get_ipo_calendar"
-    ]
-  },
-  {
     "category": "Prediction Markets",
     "name": "get_prediction_markets_endpoints",
-    "description": "Endpoints for prediction market data including event/market/trader stats, outcome prices, trade history, bar charts, token holders, and filtering. Provider: Codex (Defined.fi) covering Polymarket and Kalshi.",
+    "description": "Endpoints for prediction market data including event/market/trader stats, outcome prices, trade history, bar charts, token holders, and filtering. Provider: Codex covering Polymarket and Kalshi.",
     "tools": [
       "codex_prediction_market_stats",
       "codex_prediction_event_stats",
@@ -534,22 +486,22 @@ function getTotalToolsInToolRegistry(){
   return totalTools;
 }
 
-// Dictionary mapping category index to endpoint paths
+// Dictionary mapping category index to endpoint paths.
+// Indices match ToolRegistry array positions. Backend canonical source:
+// hive-mcp2/src/toolRegistry.ts. The pure-crypto migration in 2026-04
+// removed Stocks/Forex/Economic/Alternative-Data categories; Prediction
+// Markets moved from slot 13 to slot 9.
 export const CategoryEndpoints: { [key: number]: string } = {
-  0: "/hive_market_data/mcp",           // Market Data and Price
-  1: "/hive_onchain_dex/mcp",          // On-Chain DEX & Pool Analytics
-  2: "/hive_portfolio_wallet/mcp",      // Portfolio & Wallet
-  3: "/hive_token_contract/mcp",        // Token & Contract data
-  4: "/hive_defi_protocol/mcp",         // DeFi Protocol Analytics
-  5: "/hive_nft_analytics/mcp",         // NFT Analytics
-  6: "/hive_security_risk/mcp",         // Security & Risk Analysis
+  0: "/hive_market_data/mcp",            // Market Data and Price
+  1: "/hive_onchain_dex/mcp",            // On-Chain DEX & Pool Analytics
+  2: "/hive_portfolio_wallet/mcp",       // Portfolio & Wallet
+  3: "/hive_token_contract/mcp",         // Token & Contract data
+  4: "/hive_defi_protocol/mcp",          // DeFi Protocol Analytics
+  5: "/hive_nft_analytics/mcp",          // NFT Analytics
+  6: "/hive_security_risk/mcp",          // Security & Risk Analysis
   7: "/hive_network_infrastructure/mcp", // Network & Infrastructure
-  8: "/hive_search_discovery/mcp",      // Search & Discovery
-  9: "/hive_stocks_equities/mcp",       // Stocks & Equities
-  10: "/hive_forex_commodities/mcp",    // Forex & Commodities
-  11: "/hive_economic_indicators/mcp",  // Economic Indicators
-  12: "/hive_alternative_data/mcp",     // Alternative Data
-  13: "/hive_prediction_markets/mcp",   // Prediction Markets
+  8: "/hive_search_discovery/mcp",       // Search & Discovery
+  9: "/hive_prediction_markets/mcp",     // Prediction Markets
 };
 
 export function getToolByCategory(category:number){
