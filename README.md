@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/hive-intel-hive-sdk-badge.png)](https://mseep.ai/app/hive-intel-hive-sdk)
+
 <div align="center">
 
 # Hive Intelligence
