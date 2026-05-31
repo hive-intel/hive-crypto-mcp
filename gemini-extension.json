@@ -1,0 +1,12 @@
+{
+  "name": "hive-mcp-server",
+  "version": "1.0.0",
+  "mcpServers": {
+    "hive": {
+      "url": "https://mcp.hiveintelligence.xyz/mcp",
+      "headers": {
+        "Authorization": "Bearer ${HIVE_API_KEY}"
+      }
+    }
+  }
+}

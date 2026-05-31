@@ -1,0 +1,14 @@
+{
+  "name": "hive",
+  "version": "1.0.0",
+  "description": "Hive Intelligence — agent-facing crypto intelligence MCP. Market data, DeFi, wallets, token security, DEX flows, NFTs, Solana, network infrastructure, and prediction markets via a hosted MCP server.",
+  "author": {
+    "name": "Hive Intelligence",
+    "url": "https://www.hiveintelligence.xyz",
+    "email": "support@hiveintelligence.xyz"
+  },
+  "homepage": "https://www.hiveintelligence.xyz",
+  "repository": "https://github.com/hive-intel/hive-sdk",
+  "license": "MIT",
+  "mcpServers": "./.mcp.json"
+}
