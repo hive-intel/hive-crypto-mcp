@@ -5,6 +5,19 @@
   "homepage": "https://hiveintelligence.xyz",
   "repository": "https://github.com/hive-intel/hive-sdk",
   "license": "MIT",
+  "environmentVariables": {
+    "schema": {
+      "type": "object",
+      "properties": {
+        "HIVE_API_KEY": {
+          "type": "string",
+          "description": "Hive API key for live tool execution. Tool discovery works without a key; create a free key at https://hiveintelligence.xyz/dashboard/keys."
+        }
+      },
+      "additionalProperties": false
+    },
+    "placeholderArguments": ["HIVE_API_KEY"]
+  },
   "tags": [
     "mcp",
     "mcp-server",
