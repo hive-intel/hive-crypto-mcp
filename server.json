@@ -1,7 +1,7 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "xyz.hiveintelligence/mcp",
-  "description": "Agent-facing crypto intelligence MCP — 369 callable tools across market data, DeFi, wallets, security, DEX, NFTs, Solana, network infrastructure, and prediction markets.",
+  "description": "Crypto intelligence MCP for market data, DeFi, wallets, security, DEX, NFTs, and Solana.",
   "version": "1.1.4",
   "repository": {
     "url": "https://github.com/hive-intel/hive-sdk",
@@ -11,7 +11,16 @@
   "remotes": [
     {
       "type": "streamable-http",
-      "url": "https://mcp.hiveintelligence.xyz/mcp"
+      "url": "https://mcp.hiveintelligence.xyz/mcp",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "Hive API key as a Bearer token.",
+          "isRequired": true,
+          "isSecret": true,
+          "placeholder": "Bearer hive_your_api_key"
+        }
+      ]
     }
   ]
 }
